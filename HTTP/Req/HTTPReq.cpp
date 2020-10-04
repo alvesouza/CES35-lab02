@@ -14,5 +14,5 @@ void HTTPReq::setURL(std::string url_to_be) {
 }
 
 std::vector<uint8_t> HTTPReq::enconde() {
-
+    return std::vector<uint8_t>(2,4);
 }

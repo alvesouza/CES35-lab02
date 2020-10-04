@@ -1,3 +1,13 @@
 /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/ip_functions.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/CMakeFiles/IP.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPResp.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPReq.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/web-server.dir

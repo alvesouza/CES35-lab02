@@ -73,46 +73,220 @@ CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/CES35_lab02.dir/all
+all: CMakeFiles/ip_functions.dir/all
+all: functions/all
+all: HTTP/all
+all: web-server/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: functions/preinstall
+preinstall: HTTP/preinstall
+preinstall: web-server/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/CES35_lab02.dir/clean
+clean: CMakeFiles/ip_functions.dir/clean
+clean: functions/clean
+clean: HTTP/clean
+clean: web-server/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/CES35_lab02.dir
+# Directory level rules for directory HTTP
+
+# Recursive "all" directory target.
+HTTP/all: HTTP/CMakeFiles/HTTPResp.dir/all
+HTTP/all: HTTP/CMakeFiles/HTTPReq.dir/all
+
+.PHONY : HTTP/all
+
+# Recursive "preinstall" directory target.
+HTTP/preinstall:
+
+.PHONY : HTTP/preinstall
+
+# Recursive "clean" directory target.
+HTTP/clean: HTTP/CMakeFiles/HTTPResp.dir/clean
+HTTP/clean: HTTP/CMakeFiles/HTTPReq.dir/clean
+
+.PHONY : HTTP/clean
+
+#=============================================================================
+# Directory level rules for directory functions
+
+# Recursive "all" directory target.
+functions/all: functions/CMakeFiles/IP.dir/all
+
+.PHONY : functions/all
+
+# Recursive "preinstall" directory target.
+functions/preinstall:
+
+.PHONY : functions/preinstall
+
+# Recursive "clean" directory target.
+functions/clean: functions/CMakeFiles/IP.dir/clean
+
+.PHONY : functions/clean
+
+#=============================================================================
+# Directory level rules for directory web-server
+
+# Recursive "all" directory target.
+web-server/all: web-server/CMakeFiles/web-server.dir/all
+
+.PHONY : web-server/all
+
+# Recursive "preinstall" directory target.
+web-server/preinstall:
+
+.PHONY : web-server/preinstall
+
+# Recursive "clean" directory target.
+web-server/clean: web-server/CMakeFiles/web-server.dir/clean
+
+.PHONY : web-server/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ip_functions.dir
 
 # All Build rule for target.
-CMakeFiles/CES35_lab02.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target CES35_lab02"
-.PHONY : CMakeFiles/CES35_lab02.dir/all
+CMakeFiles/ip_functions.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target ip_functions"
+.PHONY : CMakeFiles/ip_functions.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/CES35_lab02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CES35_lab02.dir/all
+CMakeFiles/ip_functions.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ip_functions.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/CES35_lab02.dir/rule
+.PHONY : CMakeFiles/ip_functions.dir/rule
 
 # Convenience name for target.
-CES35_lab02: CMakeFiles/CES35_lab02.dir/rule
+ip_functions: CMakeFiles/ip_functions.dir/rule
 
-.PHONY : CES35_lab02
+.PHONY : ip_functions
 
 # clean rule for target.
-CMakeFiles/CES35_lab02.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/clean
-.PHONY : CMakeFiles/CES35_lab02.dir/clean
+CMakeFiles/ip_functions.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/clean
+.PHONY : CMakeFiles/ip_functions.dir/clean
+
+#=============================================================================
+# Target rules for target functions/CMakeFiles/IP.dir
+
+# All Build rule for target.
+functions/CMakeFiles/IP.dir/all:
+	$(MAKE) $(MAKESILENT) -f functions/CMakeFiles/IP.dir/build.make functions/CMakeFiles/IP.dir/depend
+	$(MAKE) $(MAKESILENT) -f functions/CMakeFiles/IP.dir/build.make functions/CMakeFiles/IP.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target IP"
+.PHONY : functions/CMakeFiles/IP.dir/all
+
+# Build rule for subdir invocation for target.
+functions/CMakeFiles/IP.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 functions/CMakeFiles/IP.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+.PHONY : functions/CMakeFiles/IP.dir/rule
+
+# Convenience name for target.
+IP: functions/CMakeFiles/IP.dir/rule
+
+.PHONY : IP
+
+# clean rule for target.
+functions/CMakeFiles/IP.dir/clean:
+	$(MAKE) $(MAKESILENT) -f functions/CMakeFiles/IP.dir/build.make functions/CMakeFiles/IP.dir/clean
+.PHONY : functions/CMakeFiles/IP.dir/clean
+
+#=============================================================================
+# Target rules for target HTTP/CMakeFiles/HTTPResp.dir
+
+# All Build rule for target.
+HTTP/CMakeFiles/HTTPResp.dir/all:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/depend
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target HTTPResp"
+.PHONY : HTTP/CMakeFiles/HTTPResp.dir/all
+
+# Build rule for subdir invocation for target.
+HTTP/CMakeFiles/HTTPResp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPResp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+.PHONY : HTTP/CMakeFiles/HTTPResp.dir/rule
+
+# Convenience name for target.
+HTTPResp: HTTP/CMakeFiles/HTTPResp.dir/rule
+
+.PHONY : HTTPResp
+
+# clean rule for target.
+HTTP/CMakeFiles/HTTPResp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/clean
+.PHONY : HTTP/CMakeFiles/HTTPResp.dir/clean
+
+#=============================================================================
+# Target rules for target HTTP/CMakeFiles/HTTPReq.dir
+
+# All Build rule for target.
+HTTP/CMakeFiles/HTTPReq.dir/all:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/depend
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target HTTPReq"
+.PHONY : HTTP/CMakeFiles/HTTPReq.dir/all
+
+# Build rule for subdir invocation for target.
+HTTP/CMakeFiles/HTTPReq.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPReq.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+.PHONY : HTTP/CMakeFiles/HTTPReq.dir/rule
+
+# Convenience name for target.
+HTTPReq: HTTP/CMakeFiles/HTTPReq.dir/rule
+
+.PHONY : HTTPReq
+
+# clean rule for target.
+HTTP/CMakeFiles/HTTPReq.dir/clean:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/clean
+.PHONY : HTTP/CMakeFiles/HTTPReq.dir/clean
+
+#=============================================================================
+# Target rules for target web-server/CMakeFiles/web-server.dir
+
+# All Build rule for target.
+web-server/CMakeFiles/web-server.dir/all: functions/CMakeFiles/IP.dir/all
+web-server/CMakeFiles/web-server.dir/all: HTTP/CMakeFiles/HTTPResp.dir/all
+web-server/CMakeFiles/web-server.dir/all: HTTP/CMakeFiles/HTTPReq.dir/all
+	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/depend
+	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target web-server"
+.PHONY : web-server/CMakeFiles/web-server.dir/all
+
+# Build rule for subdir invocation for target.
+web-server/CMakeFiles/web-server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/CMakeFiles/web-server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+.PHONY : web-server/CMakeFiles/web-server.dir/rule
+
+# Convenience name for target.
+web-server: web-server/CMakeFiles/web-server.dir/rule
+
+.PHONY : web-server
+
+# clean rule for target.
+web-server/CMakeFiles/web-server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/clean
+.PHONY : web-server/CMakeFiles/web-server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

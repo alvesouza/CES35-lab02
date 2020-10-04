@@ -5,7 +5,7 @@
 		<Option title="CES35_lab02"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\functions\;CMake Files\HTTP\;CMake Files\web-server\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug"/>
@@ -37,11 +37,11 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="CES35_lab02">
-				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CES35_lab02" prefix_auto="0" extension_auto="0"/>
+			<Target title="ip_functions">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/libip_functions.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/c++/9"/>
@@ -53,17 +53,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 CES35_lab02"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 ip_functions"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="CES35_lab02/fast">
-				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CES35_lab02" prefix_auto="0" extension_auto="0"/>
+			<Target title="ip_functions/fast">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/libip_functions.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/c++/9"/>
@@ -75,42 +75,235 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 CES35_lab02/fast"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 ip_functions/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IP">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/libIP.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/functions"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 IP"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IP/fast">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/libIP.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/functions"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 IP/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HTTPResp">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/libHTTPResp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Resp"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 HTTPResp"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HTTPResp/fast">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/libHTTPResp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Resp"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 HTTPResp/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HTTPReq">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/libHTTPReq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Req"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 HTTPReq"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HTTPReq/fast">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/libHTTPReq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Req"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 HTTPReq/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="web-server">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/web-server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/functions"/>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Resp"/>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Req"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 web-server"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="web-server/fast">
+				<Option output="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/web-server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/functions"/>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Resp"/>
+					<Add directory="/home/pedro/Documents/github/CES35-lab02/HTTP/./Req"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 web-server/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTP/Req/HTTPReq.cpp">
+			<Option target="HTTPReq"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPReq.h">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTP/Req/HTTPReq.h">
+			<Option target="HTTPReq"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTP/Resp/HTTPResp.cpp">
+			<Option target="HTTPResp"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPResp.h">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTP/Resp/HTTPResp.h">
+			<Option target="HTTPResp"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/echo-client.cpp">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.cpp">
+			<Option target="ip_functions"/>
+			<Option target="IP"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/echo-server.cpp">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.h">
+			<Option target="ip_functions"/>
+			<Option target="IP"/>
 		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/main.cpp">
-			<Option target="CES35_lab02"/>
-		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/multi-thread.cpp">
-			<Option target="CES35_lab02"/>
-		</Unit>
-		<Unit filename="/home/pedro/Documents/github/CES35-lab02/showip.cpp">
-			<Option target="CES35_lab02"/>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/web-server/web-server.cpp">
+			<Option target="web-server"/>
 		</Unit>
 		<Unit filename="/home/pedro/Documents/github/CES35-lab02/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/functions/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\functions\"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTP/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\HTTP\"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/web-server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\web-server\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -90,107 +90,18 @@ CMakeFiles/CES35_lab02.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/main.cpp -o CMakeFiles/CES35_lab02.dir/main.cpp.s
 
-CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o: ../multi-thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o -c /home/pedro/Documents/github/CES35-lab02/multi-thread.cpp
-
-CMakeFiles/CES35_lab02.dir/multi-thread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/multi-thread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/multi-thread.cpp > CMakeFiles/CES35_lab02.dir/multi-thread.cpp.i
-
-CMakeFiles/CES35_lab02.dir/multi-thread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/multi-thread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/multi-thread.cpp -o CMakeFiles/CES35_lab02.dir/multi-thread.cpp.s
-
-CMakeFiles/CES35_lab02.dir/echo-client.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/echo-client.cpp.o: ../echo-client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CES35_lab02.dir/echo-client.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/echo-client.cpp.o -c /home/pedro/Documents/github/CES35-lab02/echo-client.cpp
-
-CMakeFiles/CES35_lab02.dir/echo-client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/echo-client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/echo-client.cpp > CMakeFiles/CES35_lab02.dir/echo-client.cpp.i
-
-CMakeFiles/CES35_lab02.dir/echo-client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/echo-client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/echo-client.cpp -o CMakeFiles/CES35_lab02.dir/echo-client.cpp.s
-
-CMakeFiles/CES35_lab02.dir/echo-server.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/echo-server.cpp.o: ../echo-server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CES35_lab02.dir/echo-server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/echo-server.cpp.o -c /home/pedro/Documents/github/CES35-lab02/echo-server.cpp
-
-CMakeFiles/CES35_lab02.dir/echo-server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/echo-server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/echo-server.cpp > CMakeFiles/CES35_lab02.dir/echo-server.cpp.i
-
-CMakeFiles/CES35_lab02.dir/echo-server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/echo-server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/echo-server.cpp -o CMakeFiles/CES35_lab02.dir/echo-server.cpp.s
-
-CMakeFiles/CES35_lab02.dir/showip.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/showip.cpp.o: ../showip.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CES35_lab02.dir/showip.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/showip.cpp.o -c /home/pedro/Documents/github/CES35-lab02/showip.cpp
-
-CMakeFiles/CES35_lab02.dir/showip.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/showip.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/showip.cpp > CMakeFiles/CES35_lab02.dir/showip.cpp.i
-
-CMakeFiles/CES35_lab02.dir/showip.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/showip.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/showip.cpp -o CMakeFiles/CES35_lab02.dir/showip.cpp.s
-
-CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o: ../HTTPReq.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o -c /home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp
-
-CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp > CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.i
-
-CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp -o CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.s
-
-CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o: CMakeFiles/CES35_lab02.dir/flags.make
-CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o: ../HTTPResp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o -c /home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp
-
-CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp > CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.i
-
-CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp -o CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.s
-
 # Object files for target CES35_lab02
 CES35_lab02_OBJECTS = \
-"CMakeFiles/CES35_lab02.dir/main.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/echo-client.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/echo-server.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/showip.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o" \
-"CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o"
+"CMakeFiles/CES35_lab02.dir/main.cpp.o"
 
 # External object files for target CES35_lab02
 CES35_lab02_EXTERNAL_OBJECTS =
 
 CES35_lab02: CMakeFiles/CES35_lab02.dir/main.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/echo-client.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/echo-server.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/showip.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o
-CES35_lab02: CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o
 CES35_lab02: CMakeFiles/CES35_lab02.dir/build.make
+CES35_lab02: libip_functions.a
 CES35_lab02: CMakeFiles/CES35_lab02.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable CES35_lab02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CES35_lab02"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CES35_lab02.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

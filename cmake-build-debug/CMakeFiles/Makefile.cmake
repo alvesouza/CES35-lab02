@@ -8,9 +8,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../HTTP/CMakeLists.txt"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../functions/CMakeLists.txt"
+  "../web-server/CMakeLists.txt"
   "/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCInformation.cmake"
   "/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXInformation.cmake"
   "/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -44,9 +47,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "functions/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "HTTP/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "web-server/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/CES35_lab02.dir/DependInfo.cmake"
+  "CMakeFiles/ip_functions.dir/DependInfo.cmake"
+  "functions/CMakeFiles/IP.dir/DependInfo.cmake"
+  "HTTP/CMakeFiles/HTTPResp.dir/DependInfo.cmake"
+  "HTTP/CMakeFiles/HTTPReq.dir/DependInfo.cmake"
+  "web-server/CMakeFiles/web-server.dir/DependInfo.cmake"
   )

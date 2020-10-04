@@ -131,206 +131,96 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CES35_lab02
+# Target rules for targets named ip_functions
 
 # Build rule for target.
-CES35_lab02: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CES35_lab02
-.PHONY : CES35_lab02
+ip_functions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ip_functions
+.PHONY : ip_functions
 
 # fast build rule for target.
-CES35_lab02/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/build
-.PHONY : CES35_lab02/fast
+ip_functions/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/build
+.PHONY : ip_functions/fast
 
-HTTPReq.o: HTTPReq.cpp.o
+#=============================================================================
+# Target rules for targets named IP
 
-.PHONY : HTTPReq.o
+# Build rule for target.
+IP: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IP
+.PHONY : IP
 
-# target to build an object file
-HTTPReq.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o
-.PHONY : HTTPReq.cpp.o
+# fast build rule for target.
+IP/fast:
+	$(MAKE) $(MAKESILENT) -f functions/CMakeFiles/IP.dir/build.make functions/CMakeFiles/IP.dir/build
+.PHONY : IP/fast
 
-HTTPReq.i: HTTPReq.cpp.i
+#=============================================================================
+# Target rules for targets named HTTPResp
 
-.PHONY : HTTPReq.i
+# Build rule for target.
+HTTPResp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTPResp
+.PHONY : HTTPResp
 
-# target to preprocess a source file
-HTTPReq.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.i
-.PHONY : HTTPReq.cpp.i
+# fast build rule for target.
+HTTPResp/fast:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/build
+.PHONY : HTTPResp/fast
 
-HTTPReq.s: HTTPReq.cpp.s
+#=============================================================================
+# Target rules for targets named HTTPReq
 
-.PHONY : HTTPReq.s
+# Build rule for target.
+HTTPReq: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTPReq
+.PHONY : HTTPReq
 
-# target to generate assembly for a file
-HTTPReq.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.s
-.PHONY : HTTPReq.cpp.s
+# fast build rule for target.
+HTTPReq/fast:
+	$(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/build
+.PHONY : HTTPReq/fast
 
-HTTPResp.o: HTTPResp.cpp.o
+#=============================================================================
+# Target rules for targets named web-server
 
-.PHONY : HTTPResp.o
+# Build rule for target.
+web-server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server
+.PHONY : web-server
 
-# target to build an object file
-HTTPResp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o
-.PHONY : HTTPResp.cpp.o
+# fast build rule for target.
+web-server/fast:
+	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
+.PHONY : web-server/fast
 
-HTTPResp.i: HTTPResp.cpp.i
+functions/ip/ip_functions.o: functions/ip/ip_functions.cpp.o
 
-.PHONY : HTTPResp.i
-
-# target to preprocess a source file
-HTTPResp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.i
-.PHONY : HTTPResp.cpp.i
-
-HTTPResp.s: HTTPResp.cpp.s
-
-.PHONY : HTTPResp.s
-
-# target to generate assembly for a file
-HTTPResp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.s
-.PHONY : HTTPResp.cpp.s
-
-echo-client.o: echo-client.cpp.o
-
-.PHONY : echo-client.o
+.PHONY : functions/ip/ip_functions.o
 
 # target to build an object file
-echo-client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-client.cpp.o
-.PHONY : echo-client.cpp.o
+functions/ip/ip_functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.o
+.PHONY : functions/ip/ip_functions.cpp.o
 
-echo-client.i: echo-client.cpp.i
+functions/ip/ip_functions.i: functions/ip/ip_functions.cpp.i
 
-.PHONY : echo-client.i
-
-# target to preprocess a source file
-echo-client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-client.cpp.i
-.PHONY : echo-client.cpp.i
-
-echo-client.s: echo-client.cpp.s
-
-.PHONY : echo-client.s
-
-# target to generate assembly for a file
-echo-client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-client.cpp.s
-.PHONY : echo-client.cpp.s
-
-echo-server.o: echo-server.cpp.o
-
-.PHONY : echo-server.o
-
-# target to build an object file
-echo-server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-server.cpp.o
-.PHONY : echo-server.cpp.o
-
-echo-server.i: echo-server.cpp.i
-
-.PHONY : echo-server.i
+.PHONY : functions/ip/ip_functions.i
 
 # target to preprocess a source file
-echo-server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-server.cpp.i
-.PHONY : echo-server.cpp.i
+functions/ip/ip_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.i
+.PHONY : functions/ip/ip_functions.cpp.i
 
-echo-server.s: echo-server.cpp.s
+functions/ip/ip_functions.s: functions/ip/ip_functions.cpp.s
 
-.PHONY : echo-server.s
-
-# target to generate assembly for a file
-echo-server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/echo-server.cpp.s
-.PHONY : echo-server.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
+.PHONY : functions/ip/ip_functions.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-multi-thread.o: multi-thread.cpp.o
-
-.PHONY : multi-thread.o
-
-# target to build an object file
-multi-thread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o
-.PHONY : multi-thread.cpp.o
-
-multi-thread.i: multi-thread.cpp.i
-
-.PHONY : multi-thread.i
-
-# target to preprocess a source file
-multi-thread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/multi-thread.cpp.i
-.PHONY : multi-thread.cpp.i
-
-multi-thread.s: multi-thread.cpp.s
-
-.PHONY : multi-thread.s
-
-# target to generate assembly for a file
-multi-thread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/multi-thread.cpp.s
-.PHONY : multi-thread.cpp.s
-
-showip.o: showip.cpp.o
-
-.PHONY : showip.o
-
-# target to build an object file
-showip.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/showip.cpp.o
-.PHONY : showip.cpp.o
-
-showip.i: showip.cpp.i
-
-.PHONY : showip.i
-
-# target to preprocess a source file
-showip.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/showip.cpp.i
-.PHONY : showip.cpp.i
-
-showip.s: showip.cpp.s
-
-.PHONY : showip.s
-
-# target to generate assembly for a file
-showip.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/showip.cpp.s
-.PHONY : showip.cpp.s
+functions/ip/ip_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.s
+.PHONY : functions/ip/ip_functions.cpp.s
 
 # Help Target
 help:
@@ -340,28 +230,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... CES35_lab02"
-	@echo "... HTTPReq.o"
-	@echo "... HTTPReq.i"
-	@echo "... HTTPReq.s"
-	@echo "... HTTPResp.o"
-	@echo "... HTTPResp.i"
-	@echo "... HTTPResp.s"
-	@echo "... echo-client.o"
-	@echo "... echo-client.i"
-	@echo "... echo-client.s"
-	@echo "... echo-server.o"
-	@echo "... echo-server.i"
-	@echo "... echo-server.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... multi-thread.o"
-	@echo "... multi-thread.i"
-	@echo "... multi-thread.s"
-	@echo "... showip.o"
-	@echo "... showip.i"
-	@echo "... showip.s"
+	@echo "... HTTPReq"
+	@echo "... HTTPResp"
+	@echo "... IP"
+	@echo "... ip_functions"
+	@echo "... web-server"
+	@echo "... functions/ip/ip_functions.o"
+	@echo "... functions/ip/ip_functions.i"
+	@echo "... functions/ip/ip_functions.s"
 .PHONY : help
 
 

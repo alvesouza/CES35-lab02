@@ -1,6 +1,7 @@
 #include <iostream>
+#include "functions/ip/ip_functions.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+int main(int argc, char *argv[]) {
+    std::cout << "teste ip adress = "<< get_ip_from_hostname(argv[1]) << std::endl;
     return 0;
 }
