@@ -3,4 +3,4 @@ project(CES35_lab02)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(CES35_lab02 main.cpp multi-thread.cpp echo-client.cpp echo-server.cpp showip.cpp)
+add_executable(CES35_lab02 main.cpp multi-thread.cpp echo-client.cpp echo-server.cpp showip.cpp HTTPReq.cpp HTTPReq.h HTTPResp.cpp HTTPResp.h)

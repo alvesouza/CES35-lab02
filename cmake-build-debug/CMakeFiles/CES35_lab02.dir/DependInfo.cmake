@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o"
+  "/home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o"
   "/home/pedro/Documents/github/CES35-lab02/echo-client.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir/echo-client.cpp.o"
   "/home/pedro/Documents/github/CES35-lab02/echo-server.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir/echo-server.cpp.o"
   "/home/pedro/Documents/github/CES35-lab02/main.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/CES35_lab02.dir/main.cpp.o"

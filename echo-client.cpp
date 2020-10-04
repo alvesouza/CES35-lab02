@@ -10,6 +10,17 @@
 #include <iostream>
 #include <sstream>
 
+typedef u_short content_type;
+
+#define APP_JSON 0
+#define TEXT_HTML 1
+
+typedef struct HTTPReq HTTPReq;
+struct HTTPReq{
+    std::string url;
+
+};
+
 int main() {
   // cria o socket TCP IP
   int sockfd = socket(AF_INET, SOCK_STREAM, 0);

@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPReq.cpp">
+			<Option target="CES35_lab02"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPReq.h">
+			<Option target="CES35_lab02"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPResp.cpp">
+			<Option target="CES35_lab02"/>
+		</Unit>
+		<Unit filename="/home/pedro/Documents/github/CES35-lab02/HTTPResp.h">
+			<Option target="CES35_lab02"/>
+		</Unit>
 		<Unit filename="/home/pedro/Documents/github/CES35-lab02/echo-client.cpp">
 			<Option target="CES35_lab02"/>
 		</Unit>

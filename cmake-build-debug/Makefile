@@ -143,6 +143,60 @@ CES35_lab02/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/build
 .PHONY : CES35_lab02/fast
 
+HTTPReq.o: HTTPReq.cpp.o
+
+.PHONY : HTTPReq.o
+
+# target to build an object file
+HTTPReq.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.o
+.PHONY : HTTPReq.cpp.o
+
+HTTPReq.i: HTTPReq.cpp.i
+
+.PHONY : HTTPReq.i
+
+# target to preprocess a source file
+HTTPReq.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.i
+.PHONY : HTTPReq.cpp.i
+
+HTTPReq.s: HTTPReq.cpp.s
+
+.PHONY : HTTPReq.s
+
+# target to generate assembly for a file
+HTTPReq.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPReq.cpp.s
+.PHONY : HTTPReq.cpp.s
+
+HTTPResp.o: HTTPResp.cpp.o
+
+.PHONY : HTTPResp.o
+
+# target to build an object file
+HTTPResp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.o
+.PHONY : HTTPResp.cpp.o
+
+HTTPResp.i: HTTPResp.cpp.i
+
+.PHONY : HTTPResp.i
+
+# target to preprocess a source file
+HTTPResp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.i
+.PHONY : HTTPResp.cpp.i
+
+HTTPResp.s: HTTPResp.cpp.s
+
+.PHONY : HTTPResp.s
+
+# target to generate assembly for a file
+HTTPResp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CES35_lab02.dir/build.make CMakeFiles/CES35_lab02.dir/HTTPResp.cpp.s
+.PHONY : HTTPResp.cpp.s
+
 echo-client.o: echo-client.cpp.o
 
 .PHONY : echo-client.o
@@ -287,6 +341,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CES35_lab02"
+	@echo "... HTTPReq.o"
+	@echo "... HTTPReq.i"
+	@echo "... HTTPReq.s"
+	@echo "... HTTPResp.o"
+	@echo "... HTTPResp.i"
+	@echo "... HTTPResp.s"
 	@echo "... echo-client.o"
 	@echo "... echo-client.i"
 	@echo "... echo-client.s"
