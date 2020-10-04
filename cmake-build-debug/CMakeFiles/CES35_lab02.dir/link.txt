@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/CES35_lab02.dir/main.cpp.o CMakeFiles/CES35_lab02.dir/multi-thread.cpp.o CMakeFiles/CES35_lab02.dir/echo-client.cpp.o CMakeFiles/CES35_lab02.dir/echo-server.cpp.o CMakeFiles/CES35_lab02.dir/showip.cpp.o  -o CES35_lab02 
