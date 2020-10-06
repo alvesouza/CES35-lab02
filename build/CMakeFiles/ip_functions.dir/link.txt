@@ -1,0 +1,2 @@
+/usr/bin/ar qc libip_functions.a CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.o
+/usr/bin/ranlib libip_functions.a

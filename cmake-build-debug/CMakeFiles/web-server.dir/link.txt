@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/web-server.dir/web-server/web-server.cpp.o  -o web-server  libip_functions.a HTTP/libHTTPResp.a HTTP/libHTTPReq.a 

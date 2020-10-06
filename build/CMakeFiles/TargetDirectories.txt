@@ -1,0 +1,13 @@
+/home/pedro/Documents/github/CES35-lab02/build/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/CMakeFiles/ip_functions.dir
+/home/pedro/Documents/github/CES35-lab02/build/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/functions/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/functions/CMakeFiles/IP.dir
+/home/pedro/Documents/github/CES35-lab02/build/functions/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/HTTP/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/HTTP/CMakeFiles/edit_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/HTTP/CMakeFiles/HTTPReq.dir
+/home/pedro/Documents/github/CES35-lab02/build/HTTP/CMakeFiles/HTTPResp.dir
+/home/pedro/Documents/github/CES35-lab02/build/web-server/CMakeFiles/rebuild_cache.dir
+/home/pedro/Documents/github/CES35-lab02/build/web-server/CMakeFiles/web-server.dir
+/home/pedro/Documents/github/CES35-lab02/build/web-server/CMakeFiles/edit_cache.dir

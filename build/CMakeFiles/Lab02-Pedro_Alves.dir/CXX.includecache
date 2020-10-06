@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pedro/Documents/github/CES35-lab02/HTTP/Req/HTTPReq.h
+string
+-
+vector
+-
+
+/home/pedro/Documents/github/CES35-lab02/ip_functions.h
+stdio.h
+-
+string.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+string
+-
+iostream
+-
+
+/home/pedro/Documents/github/CES35-lab02/main.cpp
+iostream
+-
+ip_functions.h
+/home/pedro/Documents/github/CES35-lab02/ip_functions.h
+HTTP/Req/HTTPReq.h
+/home/pedro/Documents/github/CES35-lab02/HTTP/Req/HTTPReq.h
+

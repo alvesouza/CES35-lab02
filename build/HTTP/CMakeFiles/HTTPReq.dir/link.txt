@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHTTPReq.a CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.o
+/usr/bin/ranlib libHTTPReq.a

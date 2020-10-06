@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHTTPResp.a CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.o
+/usr/bin/ranlib libHTTPResp.a
