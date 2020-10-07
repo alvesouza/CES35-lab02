@@ -1,7 +1,8 @@
 add_library(
         IP
-        ip/ip_functions.h
-        ip/ip_functions.cpp
+        Inc/ip_functions.h
+        Src/ip_functions.cpp
 )
-
-target_include_directories(IP PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+#include_directories(Inc)
+target_include_directories(IP PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Inc)
+#target_include_directories(IP PUBLIC ../functions)
