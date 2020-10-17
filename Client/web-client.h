@@ -1,14 +1,13 @@
-//
-// Created by pedro on 04/10/2020.
-//
-
-#ifndef CES35_LAB02_HTTPREQ_H
-#define CES35_LAB02_HTTPREQ_H
+#ifndef CES35_LAB02_CLIENT_H
+#define CES35_LAB02_CLIENT_H
 #include <string>
 #include <vector>
-class HTTPReq {
+
+#include "HTTP/Req/HTTPReq.h"
+#include "HTTP/Resp/HTTPResp.h"
+
+class client {
     std::string url;
-    HTTPReq();
 
 public:
     // Coloca o url passada como argumento no obj da classe
@@ -19,4 +18,4 @@ public:
 };
 
 
-#endif //CES35_LAB02_HTTPREQ_H
+#endif //CES35_LAB02_CLIENT_H

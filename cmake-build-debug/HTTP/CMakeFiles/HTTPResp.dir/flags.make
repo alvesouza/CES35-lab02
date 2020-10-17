@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pedro/Documents/github/CES35-lab02/HTTP/./Resp 
+CXX_INCLUDES = -I/home/joao/CES35-lab02/HTTP/./Resp 
 

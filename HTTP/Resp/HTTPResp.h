@@ -9,6 +9,7 @@
 class HTTPResp {
 
 public:
+    void setStatusCode(int status);
     void parse(std::vector<uint8_t> bytecode);
 };
 

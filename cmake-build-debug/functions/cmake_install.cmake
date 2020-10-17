@@ -1,4 +1,4 @@
-# Install script for directory: /home/pedro/Documents/github/CES35-lab02/functions
+# Install script for directory: /home/joao/CES35-lab02/functions
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

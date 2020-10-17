@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.o"
+  "/home/joao/CES35-lab02/functions/Src/ip_functions.cpp" "/home/joao/CES35-lab02/cmake-build-debug/functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../functions"
+  "../functions/Inc"
   )
 
 # Targets to which this target links.

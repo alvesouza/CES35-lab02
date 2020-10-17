@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/Documents/github/CES35-lab02
+CMAKE_SOURCE_DIR = /home/joao/CES35-lab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/CES35-lab02/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include functions/CMakeFiles/IP.dir/depend.make
@@ -77,32 +77,32 @@ include functions/CMakeFiles/IP.dir/progress.make
 # Include the compile flags for this target's objects.
 include functions/CMakeFiles/IP.dir/flags.make
 
-functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.o: functions/CMakeFiles/IP.dir/flags.make
-functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.o: ../functions/ip/ip_functions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.o"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/IP.dir/ip/ip_functions.cpp.o -c /home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.cpp
+functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.o: functions/CMakeFiles/IP.dir/flags.make
+functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.o: ../functions/Src/ip_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joao/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.o"
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/IP.dir/Src/ip_functions.cpp.o -c /home/joao/CES35-lab02/functions/Src/ip_functions.cpp
 
-functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IP.dir/ip/ip_functions.cpp.i"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.cpp > CMakeFiles/IP.dir/ip/ip_functions.cpp.i
+functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IP.dir/Src/ip_functions.cpp.i"
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/joao/CES35-lab02/functions/Src/ip_functions.cpp > CMakeFiles/IP.dir/Src/ip_functions.cpp.i
 
-functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IP.dir/ip/ip_functions.cpp.s"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/functions/ip/ip_functions.cpp -o CMakeFiles/IP.dir/ip/ip_functions.cpp.s
+functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IP.dir/Src/ip_functions.cpp.s"
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/joao/CES35-lab02/functions/Src/ip_functions.cpp -o CMakeFiles/IP.dir/Src/ip_functions.cpp.s
 
 # Object files for target IP
 IP_OBJECTS = \
-"CMakeFiles/IP.dir/ip/ip_functions.cpp.o"
+"CMakeFiles/IP.dir/Src/ip_functions.cpp.o"
 
 # External object files for target IP
 IP_EXTERNAL_OBJECTS =
 
-functions/libIP.a: functions/CMakeFiles/IP.dir/ip/ip_functions.cpp.o
+functions/libIP.a: functions/CMakeFiles/IP.dir/Src/ip_functions.cpp.o
 functions/libIP.a: functions/CMakeFiles/IP.dir/build.make
 functions/libIP.a: functions/CMakeFiles/IP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libIP.a"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -P CMakeFiles/IP.dir/cmake_clean_target.cmake
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IP.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joao/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libIP.a"
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -P CMakeFiles/IP.dir/cmake_clean_target.cmake
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 functions/CMakeFiles/IP.dir/build: functions/libIP.a
@@ -110,10 +110,10 @@ functions/CMakeFiles/IP.dir/build: functions/libIP.a
 .PHONY : functions/CMakeFiles/IP.dir/build
 
 functions/CMakeFiles/IP.dir/clean:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -P CMakeFiles/IP.dir/cmake_clean.cmake
+	cd /home/joao/CES35-lab02/cmake-build-debug/functions && $(CMAKE_COMMAND) -P CMakeFiles/IP.dir/cmake_clean.cmake
 .PHONY : functions/CMakeFiles/IP.dir/clean
 
 functions/CMakeFiles/IP.dir/depend:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pedro/Documents/github/CES35-lab02 /home/pedro/Documents/github/CES35-lab02/functions /home/pedro/Documents/github/CES35-lab02/cmake-build-debug /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/CMakeFiles/IP.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joao/CES35-lab02 /home/joao/CES35-lab02/functions /home/joao/CES35-lab02/cmake-build-debug /home/joao/CES35-lab02/cmake-build-debug/functions /home/joao/CES35-lab02/cmake-build-debug/functions/CMakeFiles/IP.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : functions/CMakeFiles/IP.dir/depend
 

@@ -59,38 +59,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/Documents/github/CES35-lab02
+CMAKE_SOURCE_DIR = /home/joao/CES35-lab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/CES35-lab02/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -98,11 +87,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,19 +129,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named ip_functions
-
-# Build rule for target.
-ip_functions: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ip_functions
-.PHONY : ip_functions
-
-# fast build rule for target.
-ip_functions/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/build
-.PHONY : ip_functions/fast
 
 #=============================================================================
 # Target rules for targets named IP
@@ -195,33 +182,6 @@ web-server/fast:
 	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
 .PHONY : web-server/fast
 
-functions/ip/ip_functions.o: functions/ip/ip_functions.cpp.o
-
-.PHONY : functions/ip/ip_functions.o
-
-# target to build an object file
-functions/ip/ip_functions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.o
-.PHONY : functions/ip/ip_functions.cpp.o
-
-functions/ip/ip_functions.i: functions/ip/ip_functions.cpp.i
-
-.PHONY : functions/ip/ip_functions.i
-
-# target to preprocess a source file
-functions/ip/ip_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.i
-.PHONY : functions/ip/ip_functions.cpp.i
-
-functions/ip/ip_functions.s: functions/ip/ip_functions.cpp.s
-
-.PHONY : functions/ip/ip_functions.s
-
-# target to generate assembly for a file
-functions/ip/ip_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ip_functions.dir/build.make CMakeFiles/ip_functions.dir/functions/ip/ip_functions.cpp.s
-.PHONY : functions/ip/ip_functions.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -233,11 +193,7 @@ help:
 	@echo "... HTTPReq"
 	@echo "... HTTPResp"
 	@echo "... IP"
-	@echo "... ip_functions"
 	@echo "... web-server"
-	@echo "... functions/ip/ip_functions.o"
-	@echo "... functions/ip/ip_functions.i"
-	@echo "... functions/ip/ip_functions.s"
 .PHONY : help
 
 

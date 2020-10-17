@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/Documents/github/CES35-lab02
+CMAKE_SOURCE_DIR = /home/joao/CES35-lab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/CES35-lab02/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -90,7 +90,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -100,14 +100,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/progress.marks
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles /home/joao/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/progress.marks
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/clean
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/preinstall
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/preinstall
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 web-server/CMakeFiles/web-server.dir/rule:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/CMakeFiles/web-server.dir/rule
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-server/CMakeFiles/web-server.dir/rule
 .PHONY : web-server/CMakeFiles/web-server.dir/rule
 
 # Convenience name for target.
@@ -142,7 +142,7 @@ web-server: web-server/CMakeFiles/web-server.dir/rule
 
 # fast build rule for target.
 web-server/fast:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
 .PHONY : web-server/fast
 
 web-server.o: web-server.cpp.o
@@ -151,7 +151,7 @@ web-server.o: web-server.cpp.o
 
 # target to build an object file
 web-server.cpp.o:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.o
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.o
 .PHONY : web-server.cpp.o
 
 web-server.i: web-server.cpp.i
@@ -160,7 +160,7 @@ web-server.i: web-server.cpp.i
 
 # target to preprocess a source file
 web-server.cpp.i:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.i
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.i
 .PHONY : web-server.cpp.i
 
 web-server.s: web-server.cpp.s
@@ -169,7 +169,7 @@ web-server.s: web-server.cpp.s
 
 # target to generate assembly for a file
 web-server.cpp.s:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.s
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/web-server.cpp.s
 .PHONY : web-server.cpp.s
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

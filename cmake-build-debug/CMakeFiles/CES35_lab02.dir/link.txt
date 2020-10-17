@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/CES35_lab02.dir/main.cpp.o  -o CES35_lab02  libip_functions.a 

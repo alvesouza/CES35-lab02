@@ -3,16 +3,18 @@
 //
 
 #include "HTTPReq.h"
+#include "string.h"
 
 HTTPReq::HTTPReq() {
+    this->url = new std::string;
 
 }
 
 void HTTPReq::setURL(std::string url_to_be) {
-    url = url_to_be;
-
+    this->url = url_to_be;
 }
 
-std::vector<uint8_t> HTTPReq::enconde() {
-    return std::vector<uint8_t>(2,4);
+const char* HTTPReq::enconde() {
+    return this->url.c_str();
+
 }

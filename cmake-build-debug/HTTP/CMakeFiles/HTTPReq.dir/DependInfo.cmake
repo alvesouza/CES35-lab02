@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pedro/Documents/github/CES35-lab02/HTTP/Req/HTTPReq.cpp" "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.o"
+  "/home/joao/CES35-lab02/HTTP/Req/HTTPReq.cpp" "/home/joao/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

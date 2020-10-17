@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/Documents/github/CES35-lab02
+CMAKE_SOURCE_DIR = /home/joao/CES35-lab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/CES35-lab02/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -90,7 +90,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -100,14 +100,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/progress.marks
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles 0
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles /home/joao/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/progress.marks
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CES35-lab02/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/clean
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/preinstall
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/preinstall
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 HTTP/CMakeFiles/HTTPResp.dir/rule:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPResp.dir/rule
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPResp.dir/rule
 .PHONY : HTTP/CMakeFiles/HTTPResp.dir/rule
 
 # Convenience name for target.
@@ -142,12 +142,12 @@ HTTPResp: HTTP/CMakeFiles/HTTPResp.dir/rule
 
 # fast build rule for target.
 HTTPResp/fast:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/build
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/build
 .PHONY : HTTPResp/fast
 
 # Convenience name for target.
 HTTP/CMakeFiles/HTTPReq.dir/rule:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPReq.dir/rule
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HTTP/CMakeFiles/HTTPReq.dir/rule
 .PHONY : HTTP/CMakeFiles/HTTPReq.dir/rule
 
 # Convenience name for target.
@@ -157,7 +157,7 @@ HTTPReq: HTTP/CMakeFiles/HTTPReq.dir/rule
 
 # fast build rule for target.
 HTTPReq/fast:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/build
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/build
 .PHONY : HTTPReq/fast
 
 Req/HTTPReq.o: Req/HTTPReq.cpp.o
@@ -166,7 +166,7 @@ Req/HTTPReq.o: Req/HTTPReq.cpp.o
 
 # target to build an object file
 Req/HTTPReq.cpp.o:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.o
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.o
 .PHONY : Req/HTTPReq.cpp.o
 
 Req/HTTPReq.i: Req/HTTPReq.cpp.i
@@ -175,7 +175,7 @@ Req/HTTPReq.i: Req/HTTPReq.cpp.i
 
 # target to preprocess a source file
 Req/HTTPReq.cpp.i:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.i
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.i
 .PHONY : Req/HTTPReq.cpp.i
 
 Req/HTTPReq.s: Req/HTTPReq.cpp.s
@@ -184,7 +184,7 @@ Req/HTTPReq.s: Req/HTTPReq.cpp.s
 
 # target to generate assembly for a file
 Req/HTTPReq.cpp.s:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.s
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPReq.dir/build.make HTTP/CMakeFiles/HTTPReq.dir/Req/HTTPReq.cpp.s
 .PHONY : Req/HTTPReq.cpp.s
 
 Resp/HTTPResp.o: Resp/HTTPResp.cpp.o
@@ -193,7 +193,7 @@ Resp/HTTPResp.o: Resp/HTTPResp.cpp.o
 
 # target to build an object file
 Resp/HTTPResp.cpp.o:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.o
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.o
 .PHONY : Resp/HTTPResp.cpp.o
 
 Resp/HTTPResp.i: Resp/HTTPResp.cpp.i
@@ -202,7 +202,7 @@ Resp/HTTPResp.i: Resp/HTTPResp.cpp.i
 
 # target to preprocess a source file
 Resp/HTTPResp.cpp.i:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.i
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.i
 .PHONY : Resp/HTTPResp.cpp.i
 
 Resp/HTTPResp.s: Resp/HTTPResp.cpp.s
@@ -211,7 +211,7 @@ Resp/HTTPResp.s: Resp/HTTPResp.cpp.s
 
 # target to generate assembly for a file
 Resp/HTTPResp.cpp.s:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.s
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(MAKE) $(MAKESILENT) -f HTTP/CMakeFiles/HTTPResp.dir/build.make HTTP/CMakeFiles/HTTPResp.dir/Resp/HTTPResp.cpp.s
 .PHONY : Resp/HTTPResp.cpp.s
 
 # Help Target
@@ -241,6 +241,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

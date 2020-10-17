@@ -10,6 +10,9 @@
 #include <iostream>
 #include <sstream>
 
+#include "HTTP/Req/HTTPReq.h"
+#include "HTTP/Resp/HTTPResp.h"
+
 typedef u_short content_type;
 
 #define APP_JSON 0
@@ -98,7 +101,7 @@ int main() {
     std::cout << "echo: ";
     std::cout << buf << std::endl;
 
-    // se a string tiver o valor close, sair do loop de eco
+    // se a string tiver o valor close, sair do loop de echo
     if (ss.str() == "close\n")
       break;
 

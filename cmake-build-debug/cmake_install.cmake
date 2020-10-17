@@ -1,4 +1,4 @@
-# Install script for directory: /home/pedro/Documents/github/CES35-lab02
+# Install script for directory: /home/joao/CES35-lab02
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,17 +39,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/functions/cmake_install.cmake")
+  include("/home/joao/CES35-lab02/cmake-build-debug/functions/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/HTTP/cmake_install.cmake")
+  include("/home/joao/CES35-lab02/cmake-build-debug/HTTP/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/cmake_install.cmake")
+  include("/home/joao/CES35-lab02/cmake-build-debug/web-server/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/joao/CES35-lab02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

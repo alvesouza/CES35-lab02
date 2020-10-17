@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/Documents/github/CES35-lab02
+CMAKE_SOURCE_DIR = /home/joao/CES35-lab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/Documents/github/CES35-lab02/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/CES35-lab02/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include web-server/CMakeFiles/web-server.dir/depend.make
@@ -79,16 +79,16 @@ include web-server/CMakeFiles/web-server.dir/flags.make
 
 web-server/CMakeFiles/web-server.dir/web-server.cpp.o: web-server/CMakeFiles/web-server.dir/flags.make
 web-server/CMakeFiles/web-server.dir/web-server.cpp.o: ../web-server/web-server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object web-server/CMakeFiles/web-server.dir/web-server.cpp.o"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/web-server.dir/web-server.cpp.o -c /home/pedro/Documents/github/CES35-lab02/web-server/web-server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joao/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object web-server/CMakeFiles/web-server.dir/web-server.cpp.o"
+	cd /home/joao/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/web-server.dir/web-server.cpp.o -c /home/joao/CES35-lab02/web-server/web-server.cpp
 
 web-server/CMakeFiles/web-server.dir/web-server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/web-server.dir/web-server.cpp.i"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/Documents/github/CES35-lab02/web-server/web-server.cpp > CMakeFiles/web-server.dir/web-server.cpp.i
+	cd /home/joao/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/joao/CES35-lab02/web-server/web-server.cpp > CMakeFiles/web-server.dir/web-server.cpp.i
 
 web-server/CMakeFiles/web-server.dir/web-server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/web-server.dir/web-server.cpp.s"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/Documents/github/CES35-lab02/web-server/web-server.cpp -o CMakeFiles/web-server.dir/web-server.cpp.s
+	cd /home/joao/CES35-lab02/cmake-build-debug/web-server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/joao/CES35-lab02/web-server/web-server.cpp -o CMakeFiles/web-server.dir/web-server.cpp.s
 
 # Object files for target web-server
 web__server_OBJECTS = \
@@ -97,25 +97,25 @@ web__server_OBJECTS = \
 # External object files for target web-server
 web__server_EXTERNAL_OBJECTS =
 
-web-server/web-server: web-server/CMakeFiles/web-server.dir/web-server.cpp.o
-web-server/web-server: web-server/CMakeFiles/web-server.dir/build.make
-web-server/web-server: functions/libIP.a
-web-server/web-server: HTTP/libHTTPResp.a
-web-server/web-server: HTTP/libHTTPReq.a
-web-server/web-server: web-server/CMakeFiles/web-server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/Documents/github/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable web-server"
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/web-server.dir/link.txt --verbose=$(VERBOSE)
+../build/web-server: web-server/CMakeFiles/web-server.dir/web-server.cpp.o
+../build/web-server: web-server/CMakeFiles/web-server.dir/build.make
+../build/web-server: functions/libIP.a
+../build/web-server: HTTP/libHTTPResp.a
+../build/web-server: HTTP/libHTTPReq.a
+../build/web-server: web-server/CMakeFiles/web-server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joao/CES35-lab02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../build/web-server"
+	cd /home/joao/CES35-lab02/cmake-build-debug/web-server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/web-server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-web-server/CMakeFiles/web-server.dir/build: web-server/web-server
+web-server/CMakeFiles/web-server.dir/build: ../build/web-server
 
 .PHONY : web-server/CMakeFiles/web-server.dir/build
 
 web-server/CMakeFiles/web-server.dir/clean:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server && $(CMAKE_COMMAND) -P CMakeFiles/web-server.dir/cmake_clean.cmake
+	cd /home/joao/CES35-lab02/cmake-build-debug/web-server && $(CMAKE_COMMAND) -P CMakeFiles/web-server.dir/cmake_clean.cmake
 .PHONY : web-server/CMakeFiles/web-server.dir/clean
 
 web-server/CMakeFiles/web-server.dir/depend:
-	cd /home/pedro/Documents/github/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pedro/Documents/github/CES35-lab02 /home/pedro/Documents/github/CES35-lab02/web-server /home/pedro/Documents/github/CES35-lab02/cmake-build-debug /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server /home/pedro/Documents/github/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/web-server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/joao/CES35-lab02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/joao/CES35-lab02 /home/joao/CES35-lab02/web-server /home/joao/CES35-lab02/cmake-build-debug /home/joao/CES35-lab02/cmake-build-debug/web-server /home/joao/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/web-server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : web-server/CMakeFiles/web-server.dir/depend
 
