@@ -5,7 +5,7 @@
 		<Option title="CES35_lab02"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\functions\;CMake Files\HTTP\;CMake Files\web-server\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\functions\;CMake Files\HTTP\;CMake Files\Server\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/joao/CES35-lab02/cmake-build-debug"/>
@@ -194,10 +194,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 web-server"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 web-server"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="web-server/fast">
@@ -219,10 +219,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 web-server/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/web-server/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 web-server/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joao/CES35-lab02/cmake-build-debug/Server/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -238,14 +238,17 @@
 		<Unit filename="/home/joao/CES35-lab02/HTTP/Resp/HTTPResp.h">
 			<Option target="HTTPResp"/>
 		</Unit>
+		<Unit filename="/home/joao/CES35-lab02/Server/web-server.cpp">
+			<Option target="web-server"/>
+		</Unit>
+		<Unit filename="/home/joao/CES35-lab02/Server/web-server.h">
+			<Option target="web-server"/>
+		</Unit>
 		<Unit filename="/home/joao/CES35-lab02/functions/Inc/ip_functions.h">
 			<Option target="IP"/>
 		</Unit>
 		<Unit filename="/home/joao/CES35-lab02/functions/Src/ip_functions.cpp">
 			<Option target="IP"/>
-		</Unit>
-		<Unit filename="/home/joao/CES35-lab02/web-server/web-server.cpp">
-			<Option target="web-server"/>
 		</Unit>
 		<Unit filename="/home/joao/CES35-lab02/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -256,8 +259,8 @@
 		<Unit filename="/home/joao/CES35-lab02/HTTP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\HTTP\"/>
 		</Unit>
-		<Unit filename="/home/joao/CES35-lab02/web-server/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\web-server\"/>
+		<Unit filename="/home/joao/CES35-lab02/Server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Server\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

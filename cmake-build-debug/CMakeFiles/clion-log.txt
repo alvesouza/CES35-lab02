@@ -1,4 +1,4 @@
-/home/pedro/Downloads/clion-2020.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/pedro/Documents/github/CES35-lab02
+/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/joao/CES35-lab02
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/pedro/Documents/github/CES35-lab02
+-- Build files have been written to: /home/joao/CES35-lab02/cmake-build-debug

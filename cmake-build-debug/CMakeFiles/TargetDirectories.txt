@@ -7,6 +7,6 @@
 /home/joao/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/rebuild_cache.dir
 /home/joao/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPResp.dir
 /home/joao/CES35-lab02/cmake-build-debug/HTTP/CMakeFiles/HTTPReq.dir
-/home/joao/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/edit_cache.dir
-/home/joao/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/rebuild_cache.dir
-/home/joao/CES35-lab02/cmake-build-debug/web-server/CMakeFiles/web-server.dir
+/home/joao/CES35-lab02/cmake-build-debug/Server/CMakeFiles/edit_cache.dir
+/home/joao/CES35-lab02/cmake-build-debug/Server/CMakeFiles/rebuild_cache.dir
+/home/joao/CES35-lab02/cmake-build-debug/Server/CMakeFiles/web-server.dir
