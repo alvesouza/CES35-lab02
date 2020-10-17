@@ -6,7 +6,6 @@
 #include "string.h"
 #include "stdlib.h"
 
-
 HTTPReq::HTTPReq() {
 }
 

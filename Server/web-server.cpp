@@ -10,7 +10,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "../functions/Inc/ip_functions.h"
+#include "ip_functions.h"
 #include "web-server.h"
 
 webServer::webServer(const char* host, const char* port, const char* dir){
@@ -42,7 +42,7 @@ int webServer::connect() {
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(this->port);     // porta tem 16 bits, logo short, network byte order
-    addr.sin_addr.s_addr = inet_addr(this->host);
+    addr.sin_addr.s_addr = inet_addr((this->host).c_str());
     memset(addr.sin_zero, '\0', sizeof(addr.sin_zero));
 
     // realizar o bind (registrar a porta para uso com o SO) para o socket
@@ -60,7 +60,9 @@ int webServer::connect() {
     return 0;
 }
 
-
+int main(){
+    return 0;
+}
 
 // int main() {
 //   // cria um socket para IPv4 e usando protocolo de transporte TCP
