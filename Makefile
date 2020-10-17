@@ -182,6 +182,19 @@ web-server/fast:
 	$(MAKE) $(MAKESILENT) -f Server/CMakeFiles/web-server.dir/build.make Server/CMakeFiles/web-server.dir/build
 .PHONY : web-server/fast
 
+#=============================================================================
+# Target rules for targets named web-client
+
+# Build rule for target.
+web-client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web-client
+.PHONY : web-client
+
+# fast build rule for target.
+web-client/fast:
+	$(MAKE) $(MAKESILENT) -f Client/CMakeFiles/web-client.dir/build.make Client/CMakeFiles/web-client.dir/build
+.PHONY : web-client/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -193,6 +206,7 @@ help:
 	@echo "... HTTPReq"
 	@echo "... HTTPResp"
 	@echo "... IP"
+	@echo "... web-client"
 	@echo "... web-server"
 .PHONY : help
 

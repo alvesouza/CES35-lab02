@@ -13,6 +13,14 @@
 #include "ip_functions.h"
 #include "web-server.h"
 
+
+struct teste_request{
+    int a, b, c;
+};
+struct teste_response{
+    int volume;
+};
+
 webServer::webServer(const char* host, const char* port, const char* dir){
 //    this->i = 0;
     this->host = get_ip_from_hostname(host);
@@ -68,14 +76,53 @@ void webServer::connect() {
 //    int i = this->i;
     if (clientSockfd == -1) {
         perror("accept");
-        printf("4\n");
+        std::cout << "4\n";
         return;
     }
 //    this->i++;
 //    sleep(rand()%10);
 //    printf("i = %d\n", i);
 
+    unsigned char buf[40] = {0};
+    unsigned char bufreq[40] = {0};
+    struct teste_request req;
+    struct teste_response resp;
 
+    bool isEnd = false;
+
+    while (!isEnd) {
+        // zera a memoria do buffer
+        memset(buf, '\0', sizeof(buf));
+
+        // recebe ate 20 bytes do cliente remoto
+        if (recv(clientSockfd, bufreq, sizeof(req), 0) == -1) {
+            perror("recv");
+            std::cout << "5"<< std::endl;
+        }
+
+        // Imprime o valor recebido no servidor antes de reenviar
+        // para o cliente de volta
+        memcpy(&req, bufreq, sizeof(req));
+        resp.volume = req.a*req.b*req.c;
+        memcpy(buf, &resp, sizeof(resp));
+        std::cout << "volume = " << resp.volume << std::endl;
+        // envia de volta o buffer recebido como um echo
+        if (send(clientSockfd, buf, sizeof(resp), 0) == -1) {
+            perror("send");
+            std::cout << "6" << std::endl;
+        }
+
+        // o conteudo do buffer convertido para string pode
+        // ser comparado com palavras-chave
+        if (req.a == 0 && req.b == 0 &&req.c == 0)
+            break;
+
+        // zera a string para receber a proxima
+    }
+
+    // fecha o socket
+    close(clientSockfd);
+    std::cout << "fecha socket\n";
     return;
 }
 
@@ -88,9 +135,20 @@ int webServer::run() {
     return 0;
 }
 
+
 int main(int argc, char** argv){
     if(argc > 1){
         webServer server = webServer(argv[1], argv[2], argv[3]);
+//        server.i = 1;
+//        uint8_t* my_s_bytes = reinterpret_cast<uint8_t*>(&server);
+//        server.i = 10;
+//        &server = reinterpret_cast<webServer*>(my_s_bytes);
+//        memcpy(&server, my_s_bytes, sizeof(server));
+//        for (int i = 0, n = sizeof(my_s_bytes); i < n; ++i) {
+//            printf("%hhu", my_s_bytes[i]);
+//        }
+//        printf("\n");
+//        printf("server.i = %d\n", server.i);
         printf("%d\n", server.run());
 
     }
