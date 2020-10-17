@@ -12,7 +12,7 @@ class webServer {
     const char* dir;
 
 public:
-    webServer(const char* host, int port, std::string dir);
+    webServer(const char* host, const char* port, const char* dir);
 
 private:
     int connect();
