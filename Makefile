@@ -179,7 +179,7 @@ web-server: cmake_check_build_system
 
 # fast build rule for target.
 web-server/fast:
-	$(MAKE) $(MAKESILENT) -f web-server/CMakeFiles/web-server.dir/build.make web-server/CMakeFiles/web-server.dir/build
+	$(MAKE) $(MAKESILENT) -f Server/CMakeFiles/web-server.dir/build.make Server/CMakeFiles/web-server.dir/build
 .PHONY : web-server/fast
 
 # Help Target

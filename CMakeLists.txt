@@ -13,5 +13,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")#arquivo 
 #)
 ADD_SUBDIRECTORY(functions)#adciona diretório na compilação
 ADD_SUBDIRECTORY(HTTP)
-ADD_SUBDIRECTORY(web-server)
+ADD_SUBDIRECTORY(Server)
 #add_executable(multi-thread.cpp echo-client.cpp echo-server.cpp HTTPReq.cpp HTTPReq.h HTTPResp.cpp HTTPResp.h web-server.cpp ip_functions.cpp )

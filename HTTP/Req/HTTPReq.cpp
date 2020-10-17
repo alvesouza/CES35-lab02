@@ -6,7 +6,7 @@
 #include "string.h"
 
 HTTPReq::HTTPReq() {
-    this->url = new std::string;
+    this->url = std::string();
 
 }
 

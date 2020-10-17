@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 
-#include "../HTTP/Req/HTTPReq.h"
-#include "../HTTP/Resp/HTTPResp.h"
+#include "HTTPReq.h"
+#include "HTTPResp.h"
 
 class webServer {
     std::string host;
@@ -12,7 +12,7 @@ class webServer {
     const char* dir;
 
 public:
-    webServer(const char* host, int port, std::string dir);
+    webServer(const char* host, const char* port, const char* dir);
 
 private:
     int connect();
