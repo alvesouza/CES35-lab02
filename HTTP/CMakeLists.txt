@@ -10,5 +10,5 @@ add_library(
         Resp/HTTPResp.cpp
 )
 
-target_include_directories(HTTPReq PUBLIC ./Req)
 target_include_directories(HTTPResp PUBLIC ./Resp)
+target_include_directories(HTTPReq PUBLIC ./Req)
