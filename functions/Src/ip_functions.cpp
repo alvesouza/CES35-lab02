@@ -32,7 +32,7 @@ std::string get_ip_from_hostname(const char *hostname){
 
         inet_ntop(p->ai_family, &(ipv4->sin_addr), ipstr, sizeof(ipstr));
 
-//        std::cout << "  " << ipstr << std::endl;
+        std::cout << "  " << ipstr << std::endl;
     }
 
     freeaddrinfo(res); // libera a memoria alocada dinamicamente para "res"

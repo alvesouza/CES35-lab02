@@ -7,15 +7,20 @@
 #include "HTTPResp.h"
 
 class webServer {
-    std::string host;
-    int port;
-    const char* dir;
 
 public:
     webServer(const char* host, const char* port, const char* dir);
-
+    int run();
+//    std::vector<sockaddr_in> clientsAddr;
 private:
-    int connect();
+    std::string host;
+    u_short port;
+    const char* dir;
+    int sockfd;
+    struct sockaddr_in addr;
+//    int i;
+    int init_listener();
+    void connect();
 };
 
 

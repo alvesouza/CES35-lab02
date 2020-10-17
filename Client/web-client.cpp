@@ -42,7 +42,7 @@ int main() {
 
   // conecta com o servidor atraves do socket
   if (connect(sockfd, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) == -1) {
-    perror("connect");
+    perror("init_listener");
     return 2;
   }
 

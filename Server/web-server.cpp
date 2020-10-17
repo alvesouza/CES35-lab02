@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <unistd.h>
-
+#include "thread"
 #include <iostream>
 #include <sstream>
 
@@ -14,20 +14,21 @@
 #include "web-server.h"
 
 webServer::webServer(const char* host, const char* port, const char* dir){
+//    this->i = 0;
     this->host = get_ip_from_hostname(host);
-    this->port = atoi(port);
+    this->port = (unsigned short)strtol(port, NULL, 10);
+
     this->dir = dir;
 }
 
-int webServer::connect() {
+int webServer::init_listener() {
     // cria um socket para IPv4 e usando protocolo de transporte TCP
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-
+    this->sockfd = socket(AF_INET, SOCK_STREAM, 0);
     // Opções de configuração do SOCKETs
     // No sistema Unix um socket local TCP fica preso e indisponível
     // por algum tempo após close, a não ser que configurado SO_REUSEADDR
     int yes = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
+    if (setsockopt(this->sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
         perror("setsockopt");
         return 1;
     }
@@ -39,20 +40,19 @@ int webServer::connect() {
     //  char             sin_zero[8];  // zero this if you want to
     // };
 
-    struct sockaddr_in addr;
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(this->port);     // porta tem 16 bits, logo short, network byte order
-    addr.sin_addr.s_addr = inet_addr((this->host).c_str());
-    memset(addr.sin_zero, '\0', sizeof(addr.sin_zero));
+    (this->addr).sin_family = AF_INET;
+    (this->addr).sin_port = htons(this->port);     // porta tem 16 bits, logo short, network byte order
+    (this->addr).sin_addr.s_addr = inet_addr((this->host).c_str());
+    memset((this->addr).sin_zero, '\0', sizeof((this->addr).sin_zero));
 
     // realizar o bind (registrar a porta para uso com o SO) para o socket
-    if (bind(sockfd, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
+    if (bind(this->sockfd, (struct sockaddr*)&(this->addr), sizeof((this->addr))) == -1) {
         perror("bind");
         return 2;
     }
 
     // colocar o socket em modo de escuta, ouvindo a porta
-    if (listen(sockfd, 1) == -1) {
+    if (listen(this->sockfd, 1) == -1) {
         perror("listen");
         return 3;
     }
@@ -60,7 +60,40 @@ int webServer::connect() {
     return 0;
 }
 
-int main(){
+void webServer::connect() {
+    struct sockaddr_in clientAddr;
+    socklen_t clientAddrSize = sizeof(clientAddr);
+    int clientSockfd = accept(this->sockfd, (struct sockaddr*)&clientAddr, &clientAddrSize);
+    std::thread(&webServer::connect, this).detach();
+//    int i = this->i;
+    if (clientSockfd == -1) {
+        perror("accept");
+        printf("4\n");
+        return;
+    }
+//    this->i++;
+//    sleep(rand()%10);
+//    printf("i = %d\n", i);
+
+
+    return;
+}
+
+int webServer::run() {
+    int j = this->init_listener();
+    printf("init_listener = %d\n", j);
+    std::thread(&webServer::connect, this).detach();
+
+    getchar();
+    return 0;
+}
+
+int main(int argc, char** argv){
+    if(argc > 1){
+        webServer server = webServer(argv[1], argv[2], argv[3]);
+        printf("%d\n", server.run());
+
+    }
     return 0;
 }
 
