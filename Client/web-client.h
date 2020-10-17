@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 
-#include "HTTP/Req/HTTPReq.h"
-#include "HTTP/Resp/HTTPResp.h"
+#include "HTTPResp.h"
+#include "HTTPReq.h"
 
 class client {
     std::string url;
