@@ -2,7 +2,7 @@
 // Created by pedro on 04/10/2020.
 //
 
-#include "ip_functions.h"
+#include "../Inc/ip_functions.h"
 
 std::string get_ip_from_hostname(const char *hostname){
     struct addrinfo hints;
