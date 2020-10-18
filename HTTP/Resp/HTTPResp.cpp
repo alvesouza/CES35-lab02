@@ -7,7 +7,7 @@
 #include "HTTPResp.h"
 
 HTTPResp::HTTPResp(const char* bytecode){
-
+    this->bytecode = bytecode;
 }
 
 const char* HTTPResp::getBytecode(){
@@ -48,8 +48,8 @@ const char* HTTPResp::encode(){
     return this->bytecode = str.c_str();
 }
 
-std::vector<std::string> HTTPResp::getAttributes(const char* bytecode){
-    std::string str(bytecode);
+std::vector<std::string> HTTPResp::getAttributes(){
+    std::string str(this->bytecode);
     std::string attribute;
     std::vector<std::string> attributes;
     for (char & c : str){
@@ -66,8 +66,8 @@ std::vector<std::string> HTTPResp::getAttributes(const char* bytecode){
     return attributes;
 }
 
-void HTTPResp::decodeReq(const char* bytecode){
-    std::vector<std::string> attributes = getAttributes(bytecode);
+void HTTPResp::decodeReq(){
+    std::vector<std::string> attributes = getAttributes();
 
     this->host = attributes[0];
     this->port = attributes[1];
@@ -76,11 +76,15 @@ void HTTPResp::decodeReq(const char* bytecode){
     this->fileName = attributes[4];
 }
 
-void HTTPResp::decodeResp(const char* bytecode){
-    std::vector<std::string> attributes = getAttributes(bytecode);
+void HTTPResp::decodeResp(){
+    std::vector<std::string> attributes = getAttributes();
 
     this->status = attributes[0];
     this->payload = attributes[1];
 }
 
-
+void HTTPResp::saveFile(){
+    std::ofstream out(this->fileName + this->contentType);
+    out << this->payload;
+    out.close();
+}

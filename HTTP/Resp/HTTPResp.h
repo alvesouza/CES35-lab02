@@ -31,6 +31,8 @@ public:
 
     std::string getPayload();
 
+    void saveFile();
+
     /**
      * Faz o encode do objeto instanciado para bytes
      */
@@ -39,19 +41,19 @@ public:
     /**
      * Faz o parser dos atributos recebidos em bytecode
      */
-    std::vector<std::string> getAttributes(const char* bytecode);
+    std::vector<std::string> getAttributes();
 
     /**
      *  Faz o parse de cada atributo HTTPReq,
      *  quando recebido um bytecode de requisição
      */
-    void decodeReq(const char* bytecode);
+    void decodeReq();
 
     /**
      *  Faz o parse de cada atributo HTTPResp,
      *  quando recebido um bytecode de resposta
      */
-    void decodeResp(const char* bytecode);
+    void decodeResp();
 
     ~HTTPResp();
 };
