@@ -77,47 +77,32 @@ int webClient::connection(){
 
 int webClient::waitResponse(){
     // buffer eh o buffer de dados a ser recebido no socket com 1MB
-    bool isEnd = false;
     char buf[buffer_max_size] = {0};
-    std::string input;
     std::stringstream ss;
-    while (!isEnd) {
-        
-        // zera o buffer
-        memset(buf, '\0', sizeof(buf));
+    
+    // zera o buffer
+    memset(buf, '\0', sizeof(buf));
 
-        // leitura do teclado
-        std::cout << "send: ";
-        std::cin >> input;
-
-        // envia a request
-        if (send(sockfd, req->serialize().c_str(), req->getBytecode().size(), 0) == -1) {
-            perror("send");
-            return 4;
-        }
-        
-        // recebe no buffer uma certa quantidade de bytes ate 1MB
-        if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
-            perror("recv");
-            return 5;
-        }
-        resp = new HTTPResp(buf);
-        resp->deserializeResp();
-        resp->saveFile();
-        
-        // coloca o conteudo do buffer na string
-        // imprime o buffer na tela
-        ss << buf << std::endl;
-        std::cout << "echo: ";
-        std::cout << buf << std::endl;
-
-        // se a string tiver o valor close, sair do loop de echo
-        if (ss.str() == "close\n")
-        break;
-
-        // zera a string ss
-        ss.str("");
+    // envia a request
+    if (send(sockfd, req->serialize().c_str(), req->getBytecode().size(), 0) == -1) {
+        perror("send");
+        return 4;
     }
+
+    // recebe no buffer uma certa quantidade de bytes ate 1MB
+    if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
+        perror("recv");
+        return 5;
+    }
+    resp = new HTTPResp(buf);
+    resp->deserializeResp();
+    resp->saveFile();
+    
+    // coloca o conteudo do buffer na string
+    // imprime o buffer na tela
+    ss << buf << std::endl;
+    std::cout << "echo: ";
+    std::cout << buf << std::endl;
 
     return 0;
 }
