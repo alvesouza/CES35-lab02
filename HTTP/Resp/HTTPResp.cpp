@@ -39,7 +39,7 @@ void HTTPResp::setPayload(std::string fileName, std::string contentType){
         this->status = "200 - OK";
     } catch (std::ifstream::failure e) {
         std::cerr << "Exception opening/reading/closing file\n";
-        this->status = "400 - Bad Request";
+        this->status = "404 - Not Found";
     }
 }
 
