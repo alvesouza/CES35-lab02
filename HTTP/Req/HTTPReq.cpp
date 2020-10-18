@@ -1,6 +1,3 @@
-//
-// Created by pedro on 04/10/2020.
-//
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -15,31 +12,32 @@
 #include "stdlib.h"
 #include "math.h"
 
-const char *HTTPReq::getHost() {
+std::string HTTPReq::getHost() {
     return this->host;
 }
 
-uint16_t HTTPReq::getPort() {
+std::string HTTPReq::getPort() {
     return this->port;
 }
 
-const char *HTTPReq::getMethod() {
+std::string HTTPReq::getMethod() {
     return this->method;
 }
 
-const char *HTTPReq::getContentType() {
+std::string HTTPReq::getContentType() {
     return this->contentType;
 }
 
-std::vector<uint8_t> HTTPReq::encode() {
-
+const char* HTTPReq::encode() {
+    std::string str = this->host + ":" + this->port + ":" + this->method + ":" + this->contentType;
+    return this->bytecode = str.c_str();
 }
 
-const char *HTTPReq::getFile() {
-    return this->file;
+std::string HTTPReq::getFileName() {
+    return this->fileName;
 }
 
-std::vector<uint8_t> HTTPReq::getBytecode() {
+const char* HTTPReq::getBytecode() {
     return this->bytecode;
 }
 
