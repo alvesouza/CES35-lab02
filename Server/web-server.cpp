@@ -13,17 +13,22 @@
 #include "ip_functions.h"
 #include "web-server.h"
 #include "fstream"
+#include "HTTPResp.h"
+#include "HTTPReq.h"
+#include "constants.h"
 
-struct teste_request{
-    int a, b, c;
-};
-
-struct teste_response{
-    int volume;
-    bool end;
-    size_t tamanho;
-    unsigned char *content;
-};
+//struct teste_request{
+//    int a, b, c;
+//};
+//
+//struct teste_response{
+//    int volume;
+//    bool end;
+//    size_t tamanho;
+////    char *content;
+//    std::string content;
+////    unsigned char *content;
+//};
 
 webServer::webServer(const char* host, const char* port, const char* dir){
 //    this->i = 0;
@@ -71,7 +76,7 @@ int webServer::init_listener() {
 
     return 0;
 }
-const size_t chunck_size = 2000;
+const size_t buffer_size = 2000;
 void webServer::connect() {
 //    sleep(10);
     struct sockaddr_in clientAddr;
@@ -89,28 +94,33 @@ void webServer::connect() {
 //    sleep(rand()%10);
 //    printf("i = %d\n", i);
 
-    unsigned char buf[chunck_size+100] = {0};
-    unsigned char bufreq[40] = {0};
-    struct teste_request req;
-    struct teste_response resp;
-    resp.end = false;
-    resp.content = (unsigned char *)malloc(sizeof(chunck_size));
+    char buf[buffer_max_size] = {0};
+    char bufreq[buffer_max_size] = {0};
+//    unsigned char buf[chunck_size+100] = {0};
+//    unsigned char bufreq[40] = {0};
+//    struct teste_request req;
+//    struct teste_response resp;
+//    resp.end = false;
+//    resp.content = (char *)malloc(sizeof(chunck_size));
+//    resp.content = (unsigned char *)malloc(sizeof(chunck_size));
+
+
 
     bool isEnd = false;
     // recebe ate 20 bytes do cliente remoto
-    if (recv(clientSockfd, bufreq, sizeof(req), 0) == -1) {
+    if (recv(clientSockfd, buf, buffer_max_size, 0) == -1) {
         perror("recv");
         std::cout << "5"<< std::endl;
     }
-
+    HTTPResp resp(buf);
     // Imprime o valor recebido no servidor antes de reenviar
     // para o cliente de volta
-    memcpy(&req, bufreq, sizeof(req));
-    resp.volume = req.a*req.b*req.c;
+
 //    std::basic_ifstream<unsigned char>inFile;
 //    inFile.open("oi.txt", std::ios::in | std::ios::binary);
-    std::basic_ifstream<unsigned char>inFile;
-    inFile.open("oi.txt", std::ios::in | std::ios::binary);
+//    std::basic_fstream<unsigned char>inFile;
+//    inFile.open("oi.txt", std::fstream::in | std::fstream::binary);
+    std::ifstream inFile("../tmp/index.html");
 //    inFile.open("oi.txt");
     inFile.seekg(0, std::ios_base::end);
     size_t length = inFile.tellg();
@@ -118,23 +128,24 @@ void webServer::connect() {
     size_t pos = 0;
     std::cout << "tamanho = " << length << std::endl;
     sleep(5);
-    printf("resp.content = %p\n", resp.content);
     while (pos < length) {
         // zera a memoria do buffer
         memset(buf, '\0', sizeof(buf));
 
-        if(length - pos > chunck_size){
-            inFile.read(resp.content, chunck_size);
+        if(length - pos > ){
+            resp.content.resize(chunck_size);
+            inFile.read(&resp.content[0], chunck_size);
             pos += chunck_size;
             resp.tamanho = chunck_size;
         }else{
-            inFile.read(resp.content, length - pos);
+            resp.content.resize(length - pos);
+            inFile.read(&resp.content[0], length - pos);
             resp.tamanho = length - pos;
             pos = length;
 
         }
         for (size_t i = 0; i < resp.tamanho; i++){
-            printf("%hhu", resp.content[i]);
+            printf("%c", resp.content[i]);
         }
         printf("\n");
         if(pos >= length){
@@ -149,7 +160,7 @@ void webServer::connect() {
             printf("%hhu", buf[i]);
         }
         printf("\n\n");
-        memcpy(buf + sizeof(resp), resp.content, resp.tamanho);
+        memcpy(buf + sizeof(resp), &(resp.content[0]), resp.tamanho);
         // envia de volta o buffer recebido como um echo
         if (send(clientSockfd, buf, sizeof(resp) + resp.tamanho, 0) == -1) {
             perror("send");
@@ -163,16 +174,16 @@ void webServer::connect() {
         usleep(50000);
 
     }
-    printf("resp.content = %p\n", resp.content);
+    printf("resp.content = %p\n", &(resp.content[0]));
 
     // fecha o socket
-    std::cout << "fecha socket\n";
+    std::cout << "fecha socket 01\n";
     close(clientSockfd);
-    std::cout << "fecha socket\n";
+    std::cout << "fecha socket 02\n";
     inFile.close();
-    std::cout << "fecha socket\n";
-    free(resp.content);
-    std::cout << "fecha socket\n";
+    std::cout << "fecha socket 03\n";
+//    free(resp.content);
+    std::cout << "fecha socket 04\n";
     return;
 }
 

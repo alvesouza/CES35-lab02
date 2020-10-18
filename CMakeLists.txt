@@ -10,10 +10,10 @@ set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")#arquivo binarios
 #add_library(
 #        ip_functions
-#        functions/ip/ip_functions.h
-#        functions/ip/ip_functions.cpp
+#        functionals/ip/ip_functions.h
+#        functionals/ip/ip_functions.cpp
 #)
-ADD_SUBDIRECTORY(functions)#adciona diretório na compilação
+ADD_SUBDIRECTORY(functionals)#adciona diretório na compilação
 ADD_SUBDIRECTORY(HTTP)
 ADD_SUBDIRECTORY(Server)
 ADD_SUBDIRECTORY(Client)
