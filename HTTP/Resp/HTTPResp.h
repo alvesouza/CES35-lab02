@@ -5,55 +5,53 @@
 
 class HTTPResp {
 private:
-    std::string url;
-    uint16_t port;
+    // HTTPReq
+    std::string host;
+    std::string port;
     std::string method;
-    std::string status;
     std::string contentType;
-    std::vector<uint8_t> bytecode;
-    std::vector<uint8_t> obj;
+    std::string fileName;
+
+    // HTTPResp
+    const char* bytecode;
+    std::string status;
+    std::string payload;
+    
+    /**
+     * Salva o arquivo requisitado no atributo payload
+     */
+    void setPayload(std::string fileName, std::string contentType);
 
 public:
-    HTTPResp(std::vector<uint8_t> bytecode){
-        parse(bytecode);
-    }
+    HTTPResp(const char* bytecode);
 
-    void setUrl(std::vector<uint8_t>& bytecode);
+    const char* getBytecode();
 
-    void setPort(std::vector<uint8_t>& bytecode);
+    std::string getStatus();
 
-    void setMethod(std::vector<uint8_t>& bytecode);
-
-    void setContentType(std::vector<uint8_t>& bytecode);
-
-    void setObj(std::vector<uint8_t>& bytecode);
-
-    std::string getUrl();
-
-    uint16_t getPort();
-
-    std::string getMethod();
-
-    std::string getContentType();
-
-    std::vector<uint8_t> getObj();
+    std::string getPayload();
 
     /**
-     * Seta o status do código como:
-     *  404: not found
-     *  200: ok
+     * Faz o encode do objeto instanciado para bytes
      */
-    void setStatusCode(int status);
+    const char* encode();
+    
+    /**
+     * Faz o parser dos atributos recebidos em bytecode
+     */
+    std::vector<std::string> getAttributes(const char* bytecode);
 
     /**
-     * Salva o arquivo requisitado no atributo obj
+     *  Faz o parse de cada atributo HTTPReq,
+     *  quando recebido um bytecode de requisição
      */
-    void setObj(std::string name);
+    void decodeReq(const char* bytecode);
 
     /**
-     *  Faz o parse de cada atributo, quando recebido um bytecode
+     *  Faz o parse de cada atributo HTTPResp,
+     *  quando recebido um bytecode de resposta
      */
-    void parse(std::vector<uint8_t> bytecode);
+    void decodeResp(const char* bytecode);
 
     ~HTTPResp();
 };
