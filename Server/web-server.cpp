@@ -76,7 +76,7 @@ int webServer::init_listener() {
 
     return 0;
 }
-const size_t buffer_size = 2000;
+
 void webServer::connect() {
 //    sleep(10);
     struct sockaddr_in clientAddr;
@@ -91,7 +91,6 @@ void webServer::connect() {
         return;
     }
     char buf[buffer_max_size] = {0};
-    char bufreq[buffer_max_size] = {0};
 
     bool isEnd = false;
     // recebe ate 20 bytes do cliente remoto
@@ -103,10 +102,10 @@ void webServer::connect() {
     resp.deserializeReq();
 
 
-    resp.getPayload();
-//    buf = resp.serialize().c_str();
+    resp.setPayload();
+
     // envia de volta o buffer recebido como um echo
-    if (send(clientSockfd, buf, resp.getBytecode().size(), 0) == -1) {
+    if (send(clientSockfd, resp.serialize().c_str(), resp.getBytecode().size(), 0) == -1) {
         perror("send");
         std::cout << "6" << std::endl;
     }
