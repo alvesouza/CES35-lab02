@@ -90,21 +90,8 @@ void webServer::connect() {
         close(clientSockfd);
         return;
     }
-//    this->i++;
-//    sleep(rand()%10);
-//    printf("i = %d\n", i);
-
     char buf[buffer_max_size] = {0};
     char bufreq[buffer_max_size] = {0};
-//    unsigned char buf[chunck_size+100] = {0};
-//    unsigned char bufreq[40] = {0};
-//    struct teste_request req;
-//    struct teste_response resp;
-//    resp.end = false;
-//    resp.content = (char *)malloc(sizeof(chunck_size));
-//    resp.content = (unsigned char *)malloc(sizeof(chunck_size));
-
-
 
     bool isEnd = false;
     // recebe ate 20 bytes do cliente remoto
@@ -113,77 +100,21 @@ void webServer::connect() {
         std::cout << "5"<< std::endl;
     }
     HTTPResp resp(buf);
-    // Imprime o valor recebido no servidor antes de reenviar
-    // para o cliente de volta
+    resp.deserializeReq();
 
-//    std::basic_ifstream<unsigned char>inFile;
-//    inFile.open("oi.txt", std::ios::in | std::ios::binary);
-//    std::basic_fstream<unsigned char>inFile;
-//    inFile.open("oi.txt", std::fstream::in | std::fstream::binary);
-    std::ifstream inFile("../tmp/index.html");
-//    inFile.open("oi.txt");
-    inFile.seekg(0, std::ios_base::end);
-    size_t length = inFile.tellg();
-    inFile.seekg(0, std::ios_base::beg);
-    size_t pos = 0;
-    std::cout << "tamanho = " << length << std::endl;
-    sleep(5);
-    while (pos < length) {
-        // zera a memoria do buffer
-        memset(buf, '\0', sizeof(buf));
 
-        if(length - pos > ){
-            resp.content.resize(chunck_size);
-            inFile.read(&resp.content[0], chunck_size);
-            pos += chunck_size;
-            resp.tamanho = chunck_size;
-        }else{
-            resp.content.resize(length - pos);
-            inFile.read(&resp.content[0], length - pos);
-            resp.tamanho = length - pos;
-            pos = length;
-
-        }
-        for (size_t i = 0; i < resp.tamanho; i++){
-            printf("%c", resp.content[i]);
-        }
-        printf("\n");
-        if(pos >= length){
-            resp.end = true;
-        }
-        printf("\n\n");
-        std::cout << "tamanho = " << resp.tamanho << std::endl;
-        std::cout << "sizeof(resp) = " << sizeof(resp) << std::endl;
-        memcpy(buf, &resp, sizeof(resp));
-        printf("%#010x\n", buf);
-        for (size_t i = 0, n = sizeof(resp); i < n; i++){
-            printf("%hhu", buf[i]);
-        }
-        printf("\n\n");
-        memcpy(buf + sizeof(resp), &(resp.content[0]), resp.tamanho);
-        // envia de volta o buffer recebido como um echo
-        if (send(clientSockfd, buf, sizeof(resp) + resp.tamanho, 0) == -1) {
-            perror("send");
-            std::cout << "6" << std::endl;
-        }
-
-        // o conteudo do buffer convertido para string pode
-        // ser comparado com palavras-chave
-
-        // zera a string para receber a proxima
-        usleep(50000);
-
+    resp.getPayload();
+//    buf = resp.serialize().c_str();
+    // envia de volta o buffer recebido como um echo
+    if (send(clientSockfd, buf, resp.getBytecode().size(), 0) == -1) {
+        perror("send");
+        std::cout << "6" << std::endl;
     }
-    printf("resp.content = %p\n", &(resp.content[0]));
 
     // fecha o socket
-    std::cout << "fecha socket 01\n";
+    std::cout << "fecha socket\n";
     close(clientSockfd);
-    std::cout << "fecha socket 02\n";
-    inFile.close();
-    std::cout << "fecha socket 03\n";
-//    free(resp.content);
-    std::cout << "fecha socket 04\n";
+    std::cout << "fechou socket\n";
     return;
 }
 
