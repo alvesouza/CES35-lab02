@@ -82,7 +82,7 @@ void webServer::connect() {
     struct sockaddr_in clientAddr;
     socklen_t clientAddrSize = sizeof(clientAddr);
     int clientSockfd = accept(this->sockfd, (struct sockaddr*)&clientAddr, &clientAddrSize);
-    std::thread(&webServer::connect, this).detach();
+    // std::thread(&webServer::connect, this).detach();
 //    int i = this->i;
     if (clientSockfd == -1) {
         perror("accept");
@@ -93,11 +93,12 @@ void webServer::connect() {
     char buf[buffer_max_size] = {0};
 
     bool isEnd = false;
-    // recebe ate 20 bytes do cliente remoto
+    std::cout << "antes" << std::endl;
     if (recv(clientSockfd, buf, buffer_max_size, 0) == -1) {
         perror("recv");
         std::cout << "5"<< std::endl;
     }
+    std::cout << "depois" << std::endl;
     HTTPResp resp(buf);
     resp.deserializeReq();
 
