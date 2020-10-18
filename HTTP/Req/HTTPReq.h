@@ -6,28 +6,33 @@
 
 class HTTPReq {
 private:
-    std::string url;
+    const char* host;
     uint16_t port;
-    std::string method;
-    std::string contentType;
+    const char* method;
+    const char* contentType;
+    const char* file;
+    std::vector<uint8_t> bytecode;
 
 public:
-    HTTPReq(std::string url, uint16_t port, std::string method, std::string contentType){
-        this->url = url;
+    HTTPReq(const char* host, uint16_t port, const char* method, const char* contentType, const char* file){
+        this->host = host;
         this->port = port;
         this->method = method;
         this->contentType = contentType;
+        this->file = file;
     };
     
-    std::string getUrl();
+    const char* getHost();
 
     uint16_t getPort();
 
-    std::string getMethod();
+    const char* getMethod();
 
-    std::string getContentType();
+    const char* getContentType();
 
-    std::vector<uint8_t> getObj();
+    const char* getFile();
+
+    const char* getBytecode();
 
     /**
      * Faz o encode do objeto instanciado para bytes
