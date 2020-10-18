@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string.h>
 #include <cstdint>
+#include <exception>
 
 #include "HTTPResp.h"
 
@@ -38,7 +39,7 @@ void HTTPResp::setPayload(){
         //read file
         infile.read(&this->payload[0], length);
         this->status = "200 - OK";
-    } catch (std::ifstream::failure e) {
+    } catch (std::exception& e) {
         std::cerr << "Exception opening/reading/closing file\n";
         this->status = "404 - Not Found";
     }
