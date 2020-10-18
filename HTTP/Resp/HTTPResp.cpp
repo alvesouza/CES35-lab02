@@ -6,8 +6,9 @@
 
 #include "HTTPResp.h"
 
-HTTPResp::HTTPResp(std::string bytecode){
-    this->bytecode = bytecode;
+HTTPResp::HTTPResp(const char* bytecode){
+    std::string str(bytecode);
+    this->bytecode = str;
 }
 
 std::string HTTPResp::getBytecode(){
