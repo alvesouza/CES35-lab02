@@ -11,16 +11,10 @@ private:
     std::string method;
     std::string contentType;
     std::string fileName;
-    const char* bytecode;
+    std::string bytecode;
 
 public:
-    HTTPReq(std::string host, std::string port, std::string method, std::string contentType, std::string fileName){
-        this->host = host;
-        this->port = port;
-        this->method = method;
-        this->contentType = contentType;
-        this->fileName = fileName;
-    };
+    HTTPReq(std::string url);
     
     std::string getHost();
 
@@ -32,12 +26,12 @@ public:
 
     std::string getFileName();
 
-    const char* getBytecode();
+    std::string getBytecode();
 
     /**
      * Faz o encode do objeto instanciado para bytes
      */
-    const char* encode();
+    std::string serialize();
 
     ~HTTPReq();
 };

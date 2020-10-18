@@ -1,16 +1,29 @@
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string.h>
-#include <stdio.h>
-#include <errno.h>
-#include <unistd.h>
+#include <cstdint>
 
 #include "HTTPReq.h"
-#include "string.h"
-#include "stdlib.h"
-#include "math.h"
+
+HTTPReq::HTTPReq(std::string url){
+    if (!url.compare(0, 6,"http://")) {
+        throw "Invalid URL";
+    }
+    int len = url.length();
+    int i = 7;
+    int j = i;
+    while (url.at(i++) != ':' && i < len);
+    this->host =  url.substr(j, i-2-j+1);
+    j = i;
+    while (url.at(i++) != '/' && i < len);
+    this->port = url.substr(j, i-2-j+1);
+    j = i;
+    while(url.at(i++) != '.' && i < len);
+    this->fileName = url.substr(j, i-2-j+1);
+    this->contentType = url.substr(i);
+    this->method = "GET";
+}
 
 std::string HTTPReq::getHost() {
     return this->host;
@@ -28,19 +41,19 @@ std::string HTTPReq::getContentType() {
     return this->contentType;
 }
 
-const char* HTTPReq::encode() {
-    std::string str = this->host + ":" + this->port + ":" + this->method + ":" + this->contentType + ":" + this->fileName;
-    return this->bytecode = str.c_str();
+std::string HTTPReq::serialize() {
+    return this->bytecode = this->method + ":" + this->host + ":" + this->port + ":" + this->fileName + ":" + this->contentType;
 }
 
 std::string HTTPReq::getFileName() {
     return this->fileName;
 }
 
-const char* HTTPReq::getBytecode() {
+std::string HTTPReq::getBytecode() {
     return this->bytecode;
 }
 
+HTTPReq::~HTTPReq(){};
 
 
 
