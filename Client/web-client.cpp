@@ -87,7 +87,7 @@ int webClient::waitResponse(){
         memset(buf, '\0', sizeof(buf));
 
         // leitura do teclado
-        std::cout << "send: ";
+        std::cout << "Press enter to make a GET request";
         std::cin >> input;
 
         // envia a request
