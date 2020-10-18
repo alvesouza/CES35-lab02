@@ -79,8 +79,8 @@ int webClient::waitResponse(){
     // buffer eh o buffer de dados a ser recebido no socket com 1MB
     bool isEnd = false;
     char buf[buffer_max_size] = {0};
-    std::string input;
     std::stringstream ss;
+    std::string input;
     while (!isEnd) {
         
         // zera o buffer
@@ -118,6 +118,21 @@ int webClient::waitResponse(){
         // zera a string ss
         ss.str("");
     }
+
+    // recebe no buffer uma certa quantidade de bytes ate 1MB
+    if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
+        perror("recv");
+        return 5;
+    }
+    resp = new HTTPResp(buf);
+    resp->deserializeResp();
+    resp->saveFile();
+    
+    // coloca o conteudo do buffer na string
+    // imprime o buffer na tela
+    ss << buf << std::endl;
+    std::cout << "echo: ";
+    std::cout << buf << std::endl;
 
     return 0;
 }
