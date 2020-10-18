@@ -2,7 +2,7 @@
 #define CES35_LAB02_HTTPREQ_H
 #include <string>
 #include <vector>
-#include "../../functions/Inc/ip_functions.h"
+#include "ip_functions.h"
 
 class HTTPReq {
 private:
