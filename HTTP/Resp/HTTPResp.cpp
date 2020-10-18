@@ -6,11 +6,11 @@
 
 #include "HTTPResp.h"
 
-HTTPResp::HTTPResp(const char* bytecode){
+HTTPResp::HTTPResp(std::string bytecode){
     this->bytecode = bytecode;
 }
 
-const char* HTTPResp::getBytecode(){
+std::string HTTPResp::getBytecode(){
     return this->bytecode;
 }
 
@@ -22,11 +22,11 @@ std::string HTTPResp::getStatus(){
     return this->status;
 }
 
-void HTTPResp::setPayload(std::string fileName, std::string contentType){
+void HTTPResp::setPayload(){
     try {
         //open file
-        std::ifstream infile("../../tmp" + fileName + contentType);
-
+        std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
+        
         //get length of file
         infile.seekg(0, std::ios::end);
         size_t length = infile.tellg();
@@ -43,16 +43,14 @@ void HTTPResp::setPayload(std::string fileName, std::string contentType){
     }
 }
 
-const char* HTTPResp::encode(){
-    std::string str = this->status + ":" + this->payload;
-    return this->bytecode = str.c_str();
+std::string HTTPResp::serialize(){
+    return this->bytecode = this->status + ":" + this->payload;
 }
 
 std::vector<std::string> HTTPResp::getAttributes(){
-    std::string str(this->bytecode);
     std::string attribute;
     std::vector<std::string> attributes;
-    for (char & c : str){
+    for (char & c : this->bytecode){
         if (c != ':'){
             attribute += c;
         }
@@ -66,17 +64,17 @@ std::vector<std::string> HTTPResp::getAttributes(){
     return attributes;
 }
 
-void HTTPResp::decodeReq(){
+void HTTPResp::deserializeReq(){
     std::vector<std::string> attributes = getAttributes();
 
-    this->host = attributes[0];
-    this->port = attributes[1];
-    this->method = attributes[2];
-    this->contentType = attributes[3];
-    this->fileName = attributes[4];
+    this->method = attributes[0];
+    this->host = attributes[1];
+    this->port = attributes[2];
+    this->fileName = attributes[3];
+    this->contentType = attributes[4];
 }
 
-void HTTPResp::decodeResp(){
+void HTTPResp::deserializeResp(){
     std::vector<std::string> attributes = getAttributes();
 
     this->status = attributes[0];
@@ -84,7 +82,9 @@ void HTTPResp::decodeResp(){
 }
 
 void HTTPResp::saveFile(){
-    std::ofstream out(this->fileName + this->contentType);
+    std::ofstream out(this->fileName + "." + this->contentType);
     out << this->payload;
     out.close();
 }
+
+HTTPResp::~HTTPResp(){};

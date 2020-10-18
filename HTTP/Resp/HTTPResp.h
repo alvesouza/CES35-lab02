@@ -13,30 +13,30 @@ private:
     std::string fileName;
 
     // HTTPResp
-    const char* bytecode;
+    std::string bytecode;
     std::string status;
     std::string payload;
     
-    /**
-     * Salva o arquivo requisitado no atributo payload
-     */
-    void setPayload(std::string fileName, std::string contentType);
-
 public:
-    HTTPResp(const char* bytecode);
+    HTTPResp(std::string bytecode);
 
-    const char* getBytecode();
+    std::string getBytecode();
 
     std::string getStatus();
 
     std::string getPayload();
+
+    /**
+     * Salva o arquivo requisitado no atributo payload
+     */
+    void setPayload();
 
     void saveFile();
 
     /**
      * Faz o encode do objeto instanciado para bytes
      */
-    const char* encode();
+    std::string serialize();
     
     /**
      * Faz o parser dos atributos recebidos em bytecode
@@ -47,13 +47,13 @@ public:
      *  Faz o parse de cada atributo HTTPReq,
      *  quando recebido um bytecode de requisição
      */
-    void decodeReq();
+    void deserializeReq();
 
     /**
      *  Faz o parse de cada atributo HTTPResp,
      *  quando recebido um bytecode de resposta
      */
-    void decodeResp();
+    void deserializeResp();
 
     ~HTTPResp();
 };
