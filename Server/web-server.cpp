@@ -82,6 +82,7 @@ void webServer::connect() {
     struct sockaddr_in clientAddr;
     socklen_t clientAddrSize = sizeof(clientAddr);
     int clientSockfd = accept(this->sockfd, (struct sockaddr*)&clientAddr, &clientAddrSize);
+    std::cout << "1\n";
     // std::thread(&webServer::connect, this).detach();
 //    int i = this->i;
     if (clientSockfd == -1) {
@@ -93,6 +94,7 @@ void webServer::connect() {
     char buf[buffer_max_size] = {0};
 
     bool isEnd = false;
+    std::cout << "2\n";
     std::cout << "antes" << std::endl;
     if (recv(clientSockfd, buf, buffer_max_size, 0) == -1) {
         perror("recv");
@@ -103,13 +105,17 @@ void webServer::connect() {
     resp.deserializeReq();
 
 
+    std::cout << "3\n";
     resp.setPayload();
+    std::cout << "4\n";
 
+    std::cout << "envia\n";
     // envia de volta o buffer recebido como um echo
     if (send(clientSockfd, resp.serialize().c_str(), resp.getBytecode().size(), 0) == -1) {
         perror("send");
         std::cout << "6" << std::endl;
     }
+    std::cout << "fecha\n";
 
     // fecha o socket
     std::cout << "fecha socket\n";

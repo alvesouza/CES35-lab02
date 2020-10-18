@@ -21,6 +21,7 @@ private:
     struct sockaddr_in addr;
     int init_listener();
     void connect();
+    void printa();
 };
 
 
