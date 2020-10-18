@@ -29,7 +29,7 @@ std::string HTTPReq::getContentType() {
 }
 
 const char* HTTPReq::encode() {
-    std::string str = this->host + ":" + this->port + ":" + this->method + ":" + this->contentType;
+    std::string str = this->host + ":" + this->port + ":" + this->method + ":" + this->contentType + ":" + this->fileName;
     return this->bytecode = str.c_str();
 }
 
