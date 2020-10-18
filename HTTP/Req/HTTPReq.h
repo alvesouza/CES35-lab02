@@ -32,7 +32,7 @@ public:
 
     const char* getFile();
 
-    const char* getBytecode();
+    std::vector<uint8_t> getBytecode();
 
     /**
      * Faz o encode do objeto instanciado para bytes
