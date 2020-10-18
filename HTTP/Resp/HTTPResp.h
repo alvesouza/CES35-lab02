@@ -2,7 +2,7 @@
 #define CES35_LAB02_HTTPRESP_H
 #include <vector>
 #include <string>
-
+#include "fstream"
 class HTTPResp {
 private:
     // HTTPReq
@@ -16,6 +16,16 @@ private:
     std::string bytecode;
     std::string status;
     std::string payload;
+
+    std::ifstream infile;
+    size_t sizeInfile;
+    size_t sizePayLoad;
+    std::ofstream out;
+
+
+    void openFileInput();
+
+    void openFileOut();
     
 public:
     HTTPResp(const char* bytecode);
@@ -32,6 +42,8 @@ public:
     void setPayload();
 
     void saveFile();
+    void closeFileInput();
+    void closeFileOut();
 
     /**
      * Faz o encode do objeto instanciado para bytes

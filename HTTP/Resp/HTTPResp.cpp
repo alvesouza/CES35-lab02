@@ -6,7 +6,7 @@
 #include <exception>
 
 #include "HTTPResp.h"
-
+#include "constants.h"
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
@@ -24,21 +24,32 @@ std::string HTTPResp::getStatus(){
     return this->status;
 }
 
+void HTTPResp::openFileInput() {
+    infile.open("../../tmp/" + this->fileName + "." + this->contentType);
+    //get length of file
+    infile.seekg(0, std::ios::end);
+    sizeInfile = infile.tellg();
+    infile.seekg(0, std::ios::beg);
+}
+
 void HTTPResp::setPayload(){
     try {
         //open file
-        std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
-        
-        //get length of file
-        infile.seekg(0, std::ios::end);
-        size_t length = infile.tellg();
-        infile.seekg(0, std::ios::beg);
+        if (!infile.is_open()){
+            openFileInput();
+        }
 
-        this->payload.resize(length);
+        sizePayLoad = payload_max_size;
+        if (sizeInfile - sizePayLoad <= 0){
+            sizePayLoad = sizeInfile;
+            this->status = "200 - OK";
+        }else{
+            this->status = "206 - Partial Content";
+        }
+        this->payload.resize(sizePayLoad);
 
         //read file
-        infile.read(&this->payload[0], length);
-        this->status = "200 - OK";
+        infile.read(&this->payload[0], sizePayLoad);
     } catch (std::exception& e) {
         std::cerr << "Exception opening/reading/closing file\n";
         this->status = "404 - Not Found";
@@ -83,10 +94,19 @@ void HTTPResp::deserializeResp(){
     this->payload = attributes[1];
 }
 
+void HTTPResp::openFileOut() {
+    out.open(this->fileName + "." + this->contentType);
+}
+
 void HTTPResp::saveFile(){
-    std::ofstream out(this->fileName + "." + this->contentType);
+    if (!out.is_open())
+        openFileOut();
     out << this->payload;
-    out.close();
+}
+
+void HTTPResp::closeFileOut() {
+    if (out.is_open())
+        out.close();
 }
 
 HTTPResp::~HTTPResp(){};
