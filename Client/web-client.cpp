@@ -77,6 +77,7 @@ int webClient::connection(){
 
 int webClient::waitResponse(){
     // buffer eh o buffer de dados a ser recebido no socket com 1MB
+    bool isEnd = false;
     char buf[buffer_max_size] = {0};
     std::stringstream ss;
     std::string input;
@@ -85,22 +86,24 @@ int webClient::waitResponse(){
         // zera o buffer
         memset(buf, '\0', sizeof(buf));
 
-    std::cout << "Envia\n";
-    std::cout << "Envia:"<< req->serialize().c_str() << "\n";
-    // envia a request
-    if (send(sockfd, req->serialize().c_str(), req->getBytecode().size(), 0) == -1) {
-        perror("send");
-        return 4;
-    }
         // leitura do teclado
-        std::cout << "Press enter to make a GET request";
-        std::cin >> input;
-
+        std::cout << "\nType get to make a GET request or close to finish: ";
+        do {
+            std::cin >> input;
+        } while(input != "get" && input != "close");
+        
+        // se a string tiver o valor close, sair do loop de echo
+        if (input == "close")
+            break;
+        
+        const char* buffer = req->serialize().c_str();
         // envia a request
-        if (send(sockfd, req->serialize().c_str(), req->getBytecode().size(), 0) == -1) {
+        if (send(sockfd, buffer, req->getBytecode().size(), 0) == -1) {
             perror("send");
             return 4;
         }
+
+        std::cout << "\nGET/" << req->getFileName() + "." + req->getContentType();
 
         // recebe no buffer uma certa quantidade de bytes ate 1MB
         if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
@@ -114,33 +117,12 @@ int webClient::waitResponse(){
         // coloca o conteudo do buffer na string
         // imprime o buffer na tela
         ss << buf << std::endl;
-        std::cout << "echo: ";
-        std::cout << buf << std::endl;
-
-    std::cout << "Espera Resposta\n";
-
-        // se a string tiver o valor close, sair do loop de echo
-        if (ss.str() == "close\n")
-        break;
+        std::cout << "\nstatus: " << resp->getStatus() << std::endl;
+        std::cout << "payload: " << resp->getPayload() << std::endl;
 
         // zera a string ss
         ss.str("");
     }
-
-    // recebe no buffer uma certa quantidade de bytes ate 1MB
-    if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
-        perror("recv");
-        return 5;
-    }
-    resp = new HTTPResp(buf);
-    resp->deserializeResp();
-    resp->saveFile();
-    
-    // coloca o conteudo do buffer na string
-    // imprime o buffer na tela
-    ss << buf << std::endl;
-    std::cout << "echo: ";
-    std::cout << buf << std::endl;
 
     return 0;
 }
