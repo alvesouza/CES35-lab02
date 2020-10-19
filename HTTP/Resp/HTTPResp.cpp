@@ -10,6 +10,7 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
+    this->dir = "";
 }
 
 std::string HTTPResp::getBytecode(){
@@ -27,7 +28,8 @@ std::string HTTPResp::getStatus(){
 void HTTPResp::setPayload(){
     try {
         //open file
-        std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
+//        std::cout << "caminho arquivo = " << this->dir + this->fileName + "." + this->contentType <<std::endl;
+        std::ifstream infile(this->dir + this->fileName + "." + this->contentType);
         
         //get length of file
         infile.seekg(0, std::ios::end);

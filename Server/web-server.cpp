@@ -102,6 +102,7 @@ void webServer::connect() {
     }
     std::cout << "depois" << std::endl;
     HTTPResp resp(buf);
+    resp.dir = this->dir;
     resp.deserializeReq();
 
 

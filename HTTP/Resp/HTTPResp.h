@@ -18,6 +18,7 @@ private:
     std::string payload;
     
 public:
+    std::string dir;
     HTTPResp(const char* bytecode);
 
     std::string getBytecode();

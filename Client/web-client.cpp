@@ -80,7 +80,6 @@ int webClient::waitResponse(){
     char buf[buffer_max_size] = {0};
     std::stringstream ss;
     std::string input;
-    while (!isEnd) {
 
         // zera o buffer
         memset(buf, '\0', sizeof(buf));
@@ -119,13 +118,11 @@ int webClient::waitResponse(){
 
     std::cout << "Espera Resposta\n";
 
-        // se a string tiver o valor close, sair do loop de echo
-        if (ss.str() == "close\n")
-        break;
+
 
         // zera a string ss
         ss.str("");
-    }
+
 
     // recebe no buffer uma certa quantidade de bytes ate 1MB
     if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
