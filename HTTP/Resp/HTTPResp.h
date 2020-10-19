@@ -16,8 +16,10 @@ private:
     std::string bytecode;
     std::string status;
     std::string payload;
+    bool emptyField;
     
 public:
+    std::string dir;
     HTTPResp(const char* bytecode);
 
     std::string getBytecode();

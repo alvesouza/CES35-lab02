@@ -27,21 +27,23 @@ std::string HTTPResp::getStatus(){
 void HTTPResp::setPayload(){
     try {
         //open file
-        std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
+//        std::cout << "caminho arquivo = " << this->dir + this->fileName + "." + this->contentType <<std::endl;
+        std::ifstream infile(this->dir + this->fileName + "." + this->contentType);
         
         //get length of file
         infile.seekg(0, std::ios::end);
         size_t length = infile.tellg();
         infile.seekg(0, std::ios::beg);
 
-        this->payload.resize(length);
+            this->payload.resize(length);
 
-        //read file
-        infile.read(&this->payload[0], length);
-        this->status = "200 - OK";
-    } catch (std::exception& e) {
-        std::cerr << "Exception opening/reading/closing file\n";
-        this->status = "404 - Not Found";
+            //read file
+            infile.read(&this->payload[0], length);
+            this->status = "200 - OK";
+        } catch (std::exception &e) {
+            std::cerr << "Exception opening/reading/closing file\n";
+            this->status = "404 - Not Found";
+        }
     }
 }
 
@@ -57,6 +59,8 @@ std::vector<std::string> HTTPResp::getAttributes(){
             attribute += c;
         }
         else {
+            if (attribute == "")
+                emptyField = true;
             attributes.push_back(attribute);
             attribute = "";
         }

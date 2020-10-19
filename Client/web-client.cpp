@@ -81,7 +81,6 @@ int webClient::waitResponse(){
     char buf[buffer_max_size] = {0};
     std::stringstream ss;
     std::string input;
-    while (!isEnd) {
 
         // zera o buffer
         memset(buf, '\0', sizeof(buf));
@@ -122,7 +121,7 @@ int webClient::waitResponse(){
 
         // zera a string ss
         ss.str("");
-    }
+
 
     return 0;
 }
