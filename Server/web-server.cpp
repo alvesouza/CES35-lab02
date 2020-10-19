@@ -83,7 +83,7 @@ void webServer::connect() {
     socklen_t clientAddrSize = sizeof(clientAddr);
     int clientSockfd = accept(this->sockfd, (struct sockaddr*)&clientAddr, &clientAddrSize);
     std::cout << "1\n";
-    // std::thread(&webServer::connect, this).detach();
+     std::thread(&webServer::connect, this).detach();
 //    int i = this->i;
     if (clientSockfd == -1) {
         perror("accept");
