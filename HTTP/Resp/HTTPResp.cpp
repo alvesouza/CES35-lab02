@@ -10,7 +10,6 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
-    this->dir = "";
 }
 
 std::string HTTPResp::getBytecode(){
@@ -36,14 +35,15 @@ void HTTPResp::setPayload(){
         size_t length = infile.tellg();
         infile.seekg(0, std::ios::beg);
 
-        this->payload.resize(length);
+            this->payload.resize(length);
 
-        //read file
-        infile.read(&this->payload[0], length);
-        this->status = "200 - OK";
-    } catch (std::exception& e) {
-        std::cerr << "Exception opening/reading/closing file\n";
-        this->status = "404 - Not Found";
+            //read file
+            infile.read(&this->payload[0], length);
+            this->status = "200 - OK";
+        } catch (std::exception &e) {
+            std::cerr << "Exception opening/reading/closing file\n";
+            this->status = "404 - Not Found";
+        }
     }
 }
 
@@ -59,6 +59,8 @@ std::vector<std::string> HTTPResp::getAttributes(){
             attribute += c;
         }
         else {
+            if (attribute == "")
+                emptyField = true;
             attributes.push_back(attribute);
             attribute = "";
         }
