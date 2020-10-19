@@ -95,12 +95,10 @@ void webServer::connect() {
 
     bool isEnd = false;
     std::cout << "2\n";
-    std::cout << "antes" << std::endl;
     if (recv(clientSockfd, buf, buffer_max_size, 0) == -1) {
         perror("recv");
         std::cout << "5"<< std::endl;
     }
-    std::cout << "depois" << std::endl;
     HTTPResp resp(buf);
     resp.deserializeReq();
 

@@ -10,7 +10,6 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
-    this->dir = "";
     std::string status = "";
     std::string payload = "";
     emptyField = false;
@@ -31,7 +30,7 @@ std::string HTTPResp::getStatus(){
 void HTTPResp::setPayload(std::string dir){
     try {
         //open file
-        std::string pathFile =  dir + "/" + this->fileName + "." + this->contentType;
+        std::string pathFile =  "../../Server" + dir + "/" + this->fileName + "." + this->contentType;
         std::cout << pathFile << std::endl;
         std::ifstream infile(pathFile);
         
@@ -94,8 +93,9 @@ void HTTPResp::deserializeResp(){
 }
 
 void HTTPResp::saveFile(){
-    std::cout << "Salva arquivo em " << this->fileName + "." + this->contentType << std::endl;
-    std::ofstream out(this->fileName + "." + this->contentType);
+    std::string pathFile = "../Client/tmp/" + this->fileName + "." + this->contentType;
+    std::cout << "\nSalva arquivo em " << pathFile << std::endl;
+    std::ofstream out(pathFile);
     out << this->payload;
     out.close();
 }

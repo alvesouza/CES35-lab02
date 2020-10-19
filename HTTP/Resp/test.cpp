@@ -13,7 +13,7 @@ int main(){
     std::vector<std::string> attributes = resp.getAttributes();
     for (auto & at : attributes)
         std::cout << at << std::endl;
-    resp.setPayload();
+    resp.setPayload("/tmp");
     std::cout << resp.getPayload() << std::endl;
     resp.saveFile();
     std::cout << resp.serialize() << std::endl;

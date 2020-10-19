@@ -80,60 +80,32 @@ int webClient::waitResponse(){
     bool isEnd = false;
     char buf[buffer_max_size] = {0};
     std::stringstream ss;
-    std::string input;
-    while (!isEnd){
-        // zera o buffer
-        memset(buf, '\0', sizeof(buf));
+    // zera o buffer
+    memset(buf, '\0', sizeof(buf));
 
-        // leitura do teclado
-        std::cout << "\nType get to make a GET request or close to finish: ";
-//        do {
-//            std::cin >> input;
-//        } while(input != "get" && input != "close");
+    req->serialize();
+    // envia a request
+    if (send(sockfd, req->getBytecode().c_str(), req->getBytecode().size(), 0) == -1) {
+        perror("send");
+        return 4;
+    }
 
-        // se a string tiver o valor close, sair do loop de echo
-        if (input == "close")
-            break;
-        req->serialize();
-        const char* buffer = req->getBytecode().c_str();
-        std::cout << "\nbuffer = " << buffer << std::endl;
-        // envia a request
-        if (send(sockfd, buffer, req->getBytecode().size(), 0) == -1) {
-            perror("send");
-            return 4;
-        }
+    std::cout << "\nGET/" << req->getFileName() + "." + req->getContentType();
 
-        std::cout << "\nGET/" << req->getFileName() + "." + req->getContentType();
-
-        // recebe no buffer uma certa quantidade de bytes ate 1MB
-        if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
-            perror("recv");
-            return 5;
-        }
-        resp = new HTTPResp(buf);
-        resp->deserializeResp();
-        resp->saveFile();
-
-        // coloca o conteudo do buffer na string
-        // imprime o buffer na tela
-        ss << buf << std::endl;
-        std::cout << "\nstatus: " << resp->getStatus() << std::endl;
-        std::cout << "payload: " << resp->getPayload() << std::endl;
-
-        // zera a string ss
-        ss.str("");
-        isEnd = true;
-
+    // recebe no buffer uma certa quantidade de bytes ate 1MB
+    if (recv(sockfd, buf, buffer_max_size, 0) == -1) {
+        perror("recv");
+        return 5;
     }
     resp = new HTTPResp(buf);
     resp->deserializeResp();
-    resp->saveFile();
-    
+    if (resp->getStatus() == "200 - OK")
+        resp->saveFile();
+
     // coloca o conteudo do buffer na string
-    // imprime o buffer na tela
-    ss << buf << std::endl;
-    std::cout << "echo: ";
-    std::cout << buf << std::endl;
+
+    std::cout << "\nstatus: " << resp->getStatus() << std::endl;
+    std::cout << "payload: " << resp->getPayload() << std::endl;
 
     return 0;
 }

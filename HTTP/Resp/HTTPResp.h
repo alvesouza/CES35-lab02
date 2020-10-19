@@ -17,7 +17,6 @@ private:
     std::string status;
     std::string payload;
 
-    std::string dir;
     bool emptyField;
     
 public:
