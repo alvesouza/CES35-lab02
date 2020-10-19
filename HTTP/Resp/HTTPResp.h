@@ -9,15 +9,13 @@ private:
     std::string host;
     std::string port;
     std::string method;
-    std::string contentType;
     std::string fileName;
+    std::string contentType;
 
     // HTTPResp
     std::string bytecode;
     std::string status;
     std::string payload;
-
-    bool emptyField;
     
 public:
     HTTPResp(const char* bytecode);

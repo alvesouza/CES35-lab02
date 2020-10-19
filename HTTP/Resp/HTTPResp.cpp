@@ -10,9 +10,11 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
-    std::string status = "";
-    std::string payload = "";
-    emptyField = false;
+    this->host = "";
+    this->port = "";
+    this->method = "";
+    this->fileName = "";
+    this->contentType = "";
 }
 
 std::string HTTPResp::getBytecode(){
@@ -28,24 +30,28 @@ std::string HTTPResp::getStatus(){
 }
 
 void HTTPResp::setPayload(std::string dir){
-    try {
-        //open file
-        std::string pathFile =  "./Server" + dir + "/" + this->fileName + "." + this->contentType;
-        std::ifstream infile(pathFile);
-        
-        //get length of file
-        infile.seekg(0, std::ios::end);
-        size_t length = infile.tellg();
-        infile.seekg(0, std::ios::beg);
+    if (this->host == "" || this->port == "" || this->method == "" || this->fileName == "" || this->contentType == "")
+        this->status = "400 - Bad Request";
+    else {
+        try {
+            //open file
+            std::string pathFile =  "./Server" + dir + "/" + this->fileName + "." + this->contentType;
+            std::ifstream infile(pathFile);
+            
+            //get length of file
+            infile.seekg(0, std::ios::end);
+            size_t length = infile.tellg();
+            infile.seekg(0, std::ios::beg);
 
             this->payload.resize(length);
 
             //read file
             infile.read(&this->payload[0], length);
             this->status = "200 - OK";
-    } catch (std::exception &e) {
-        std::cerr << "Exception opening/reading/closing file\n";
-        this->status = "404 - Not Found";
+        } catch (std::exception &e) {
+            std::cerr << "Exception reading file\n";
+            this->status = "404 - Not Found";
+        }
     }
 }
 
@@ -61,8 +67,6 @@ std::vector<std::string> HTTPResp::getAttributes(){
             attribute += c;
         }
         else {
-            if (attribute == "")
-                emptyField = true;
             attributes.push_back(attribute);
             attribute = "";
         }
