@@ -93,7 +93,7 @@ void HTTPResp::deserializeResp(){
 }
 
 void HTTPResp::saveFile(){
-    std::string pathFile = "../Client/tmp/" + this->fileName + "." + this->contentType;
+    std::string pathFile = "../../Client/tmp/" + this->fileName + "." + this->contentType;
     std::cout << "\nSalva arquivo em " << pathFile << std::endl;
     std::ofstream out(pathFile);
     out << this->payload;
