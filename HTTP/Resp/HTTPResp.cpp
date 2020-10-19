@@ -10,6 +10,9 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
+    std::string status = "";
+    std::string payload = "";
+    emptyField = false;
 }
 
 std::string HTTPResp::getBytecode(){
@@ -25,23 +28,27 @@ std::string HTTPResp::getStatus(){
 }
 
 void HTTPResp::setPayload(){
-    try {
-        //open file
-        std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
-        
-        //get length of file
-        infile.seekg(0, std::ios::end);
-        size_t length = infile.tellg();
-        infile.seekg(0, std::ios::beg);
+    if (emptyField)
+        this->status = "400 not Found";
+    else {
+        try {
+            //open file
+            std::ifstream infile("../../tmp/" + this->fileName + "." + this->contentType);
 
-        this->payload.resize(length);
+            //get length of file
+            infile.seekg(0, std::ios::end);
+            size_t length = infile.tellg();
+            infile.seekg(0, std::ios::beg);
 
-        //read file
-        infile.read(&this->payload[0], length);
-        this->status = "200 - OK";
-    } catch (std::exception& e) {
-        std::cerr << "Exception opening/reading/closing file\n";
-        this->status = "404 - Not Found";
+            this->payload.resize(length);
+
+            //read file
+            infile.read(&this->payload[0], length);
+            this->status = "200 - OK";
+        } catch (std::exception &e) {
+            std::cerr << "Exception opening/reading/closing file\n";
+            this->status = "404 - Not Found";
+        }
     }
 }
 
@@ -57,6 +64,8 @@ std::vector<std::string> HTTPResp::getAttributes(){
             attribute += c;
         }
         else {
+            if (attribute == "")
+                emptyField = true;
             attributes.push_back(attribute);
             attribute = "";
         }

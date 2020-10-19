@@ -16,6 +16,7 @@ private:
     std::string bytecode;
     std::string status;
     std::string payload;
+    bool emptyField;
     
 public:
     HTTPResp(const char* bytecode);
