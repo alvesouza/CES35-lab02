@@ -87,15 +87,16 @@ int webClient::waitResponse(){
 
         // leitura do teclado
         std::cout << "\nType get to make a GET request or close to finish: ";
-        do {
-            std::cin >> input;
-        } while(input != "get" && input != "close");
-        
+//        do {
+//            std::cin >> input;
+//        } while(input != "get" && input != "close");
+
         // se a string tiver o valor close, sair do loop de echo
         if (input == "close")
             break;
-        
-        const char* buffer = req->serialize().c_str();
+        req->serialize();
+        const char* buffer = req->getBytecode().c_str();
+        std::cout << "\nbuffer = " << buffer << std::endl;
         // envia a request
         if (send(sockfd, buffer, req->getBytecode().size(), 0) == -1) {
             perror("send");
@@ -121,8 +122,19 @@ int webClient::waitResponse(){
 
         // zera a string ss
         ss.str("");
+        isEnd = true;
 
     }
+    resp = new HTTPResp(buf);
+    resp->deserializeResp();
+    resp->saveFile();
+    
+    // coloca o conteudo do buffer na string
+    // imprime o buffer na tela
+    ss << buf << std::endl;
+    std::cout << "echo: ";
+    std::cout << buf << std::endl;
+
     return 0;
 }
 

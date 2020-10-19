@@ -16,6 +16,8 @@ private:
     std::string bytecode;
     std::string status;
     std::string payload;
+
+    std::string dir;
     bool emptyField;
     
 public:

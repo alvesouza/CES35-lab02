@@ -111,6 +111,7 @@ void webServer::connect() {
 
     std::cout << "envia\n";
     // envia de volta o buffer recebido como um echo
+    resp.serialize();
     if (send(clientSockfd, resp.serialize().c_str(), resp.getBytecode().size(), 0) == -1) {
         perror("send");
         std::cout << "6" << std::endl;
