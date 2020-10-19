@@ -10,6 +10,10 @@
 HTTPResp::HTTPResp(const char* bytecode){
     std::string str(bytecode);
     this->bytecode = str;
+    this->dir = "";
+    std::string status = "";
+    std::string payload = "";
+    emptyField = false;
 }
 
 std::string HTTPResp::getBytecode(){
@@ -27,7 +31,7 @@ std::string HTTPResp::getStatus(){
 void HTTPResp::setPayload(std::string dir){
     try {
         //open file
-        std::string pathFile = ".." + dir + "/" + this->fileName + "." + this->contentType;
+        std::string pathFile =  dir + "/" + this->fileName + "." + this->contentType;
         std::cout << pathFile << std::endl;
         std::ifstream infile(pathFile);
         
@@ -48,7 +52,7 @@ void HTTPResp::setPayload(std::string dir){
 }
 
 std::string HTTPResp::serialize(){
-    return this->bytecode = this->status + ":" + this->payload;
+    return this->bytecode = this->status + ":" + this->fileName + ":" + this->contentType + ":" + this->payload;
 }
 
 std::vector<std::string> HTTPResp::getAttributes(){
@@ -84,10 +88,13 @@ void HTTPResp::deserializeResp(){
     std::vector<std::string> attributes = getAttributes();
 
     this->status = attributes[0];
-    this->payload = attributes[1];
+    this->fileName = attributes[1];
+    this->contentType = attributes[2];
+    this->payload = attributes[3];
 }
 
 void HTTPResp::saveFile(){
+    std::cout << "Salva arquivo em " << this->fileName + "." + this->contentType << std::endl;
     std::ofstream out(this->fileName + "." + this->contentType);
     out << this->payload;
     out.close();
