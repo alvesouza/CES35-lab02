@@ -24,11 +24,12 @@ std::string HTTPResp::getStatus(){
     return this->status;
 }
 
-void HTTPResp::setPayload(){
+void HTTPResp::setPayload(std::string dir){
     try {
         //open file
-//        std::cout << "caminho arquivo = " << this->dir + this->fileName + "." + this->contentType <<std::endl;
-        std::ifstream infile(this->dir + this->fileName + "." + this->contentType);
+        std::string pathFile = ".." + dir + "/" + this->fileName + "." + this->contentType;
+        std::cout << pathFile << std::endl;
+        std::ifstream infile(pathFile);
         
         //get length of file
         infile.seekg(0, std::ios::end);
@@ -40,10 +41,9 @@ void HTTPResp::setPayload(){
             //read file
             infile.read(&this->payload[0], length);
             this->status = "200 - OK";
-        } catch (std::exception &e) {
-            std::cerr << "Exception opening/reading/closing file\n";
-            this->status = "404 - Not Found";
-        }
+    } catch (std::exception &e) {
+        std::cerr << "Exception opening/reading/closing file\n";
+        this->status = "404 - Not Found";
     }
 }
 

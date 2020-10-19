@@ -19,7 +19,6 @@ private:
     bool emptyField;
     
 public:
-    std::string dir;
     HTTPResp(const char* bytecode);
 
     std::string getBytecode();
@@ -31,7 +30,7 @@ public:
     /**
      * Salva o arquivo requisitado no atributo payload
      */
-    void setPayload();
+    void setPayload(std::string dir);
 
     void saveFile();
 

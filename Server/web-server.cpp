@@ -102,12 +102,11 @@ void webServer::connect() {
     }
     std::cout << "depois" << std::endl;
     HTTPResp resp(buf);
-    resp.dir = this->dir;
     resp.deserializeReq();
 
 
     std::cout << "3\n";
-    resp.setPayload();
+    resp.setPayload(dir);
     std::cout << "4\n";
 
     std::cout << "envia\n";
